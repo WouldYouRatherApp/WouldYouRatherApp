@@ -75,6 +75,7 @@ Users can create would you rather questions. Others can vote on the question and
    * Poll Creation
 
 ## Wireframes
+[Figma Link](https://www.figma.com/file/GqtUrr8njFLDThTWP212oM/Would-You-Rather-App?node-id=10%3A325)
 [Add picture of your hand sketched wireframes in this section]
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 
