@@ -1,6 +1,3 @@
-Original App Design Project - README Template
-===
-
 # Would You Rather
 
 ## Table of Contents
