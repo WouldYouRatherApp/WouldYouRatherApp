@@ -33,6 +33,7 @@ Users can create would you rather questions. Others can vote on the question and
 * [ ] User can comment on other peoples posts
 * [ ] User can see two tabs, one main feed (latests posts) and another tab with trending posts (posts with the most amount of likes at the top)
 * [ ] User can view results after answering a poll
+* [ ] Connection to Photo API
 
 **Optional Nice-to-have Stories**
 * [ ] User can categorize "would you rathers" with a hashtag so any user can have "catered" questions
