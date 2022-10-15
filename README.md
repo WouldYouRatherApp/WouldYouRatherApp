@@ -75,7 +75,7 @@ Users can create would you rather questions. Others can vote on the question and
    * Poll Creation
 
 ## Wireframes
-![](https://i.imgur.com/PoFjy0O.png)
+![](https://i.imgur.com/qFfalHt.png)
 
 ### [BONUS] Digital Wireframes & Mockups
 
