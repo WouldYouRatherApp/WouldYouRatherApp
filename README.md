@@ -46,6 +46,7 @@ Users can create would you rather questions. Others can vote on the question and
    * Design logo 🥸
 * Main Feed Screen
    * Feed/Posts that are uploaded the most recently (chronological order)
+   * can display posts from followed users
 * Trending Feed Screen
    * User sees questions with the most popular questions (dictated by # of votes)
 * Poll Creation Screen
@@ -91,6 +92,7 @@ Users can create would you rather questions. Others can vote on the question and
 | choiceA       | String   | text for choice A |
 | choiceB       | String   | text for choice B |
 | bio           | String   | string of biography |
+| comment       | String   | string of comment |
 | commentsCount | Number   | number of comments that has been posted to an image |
 | upvoteCount    | Number  | number of upvote for the post |
 | downvoteCount | Number   | number of downvote for the post| 
@@ -102,6 +104,33 @@ Users can create would you rather questions. Others can vote on the question and
 | image         | File     | image that user posts |
 
 ### Networking
+Network requests by screen
+* Login Screen
+    * (Create/POST) Create a username/password
+    * (Create/POST) Create a profilePhoto
+* Main Feed (followers)
+    * (Read/GET) Query all posts where followers are authors 
+    * (Update/PUT) Update upvote count by 1
+    * (Update/PUT) Update downvote count by 1
+    * (Create/POST) Create a new comment on post
+    * (Update/PUT) Update comment (edit)
+    * (Update/PUT) Update vote count on chosen option
+    * (Delete) Delete existing comment
+* Post Question
+    * (Create/POST) Create a new post object
+* User Profile
+    * (Read/GET) Query logged in user object
+    * (Update/PUT) Update user profile image
+    * (Update/PUT) Update user bio
+    * (Update/PUT) Update existing post
+    * (Delete) Delete post
+* Trending Feed
+    * (Read/GET) Query all posts that have the highest amount of votes
+    * (Create/POST) Create a comment under a post
+    * (Update/PUT) Update upvote count by 1
+    * (Update/PUT) Update downvote count by 1
+    * (Update/PUT) Update comment string
+    * (Delete) Delete existing comment
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
