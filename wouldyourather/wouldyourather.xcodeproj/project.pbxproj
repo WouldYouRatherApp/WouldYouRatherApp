@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		468795A1CFB3590FC89F0DCF /* Pods_wouldyourather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500C8944CDA0FD575FA9FD73 /* Pods_wouldyourather.framework */; };
+		60A6EAAA60FC42A7D72A41EC /* Pods_wouldyouratherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899E627BD318852D0F5E23A0 /* Pods_wouldyouratherTests.framework */; };
 		6AF3535429046B25009CA0C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3535329046B25009CA0C9 /* AppDelegate.swift */; };
 		6AF3535629046B25009CA0C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3535529046B25009CA0C9 /* SceneDelegate.swift */; };
 		6AF3535829046B25009CA0C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3535729046B25009CA0C9 /* ViewController.swift */; };
@@ -16,6 +18,7 @@
 		6AF3536B29046B26009CA0C9 /* wouldyouratherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3536A29046B26009CA0C9 /* wouldyouratherTests.swift */; };
 		6AF3537529046B26009CA0C9 /* wouldyouratherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3537429046B26009CA0C9 /* wouldyouratherUITests.swift */; };
 		6AF3537729046B26009CA0C9 /* wouldyouratherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3537629046B26009CA0C9 /* wouldyouratherUITestsLaunchTests.swift */; };
+		8E7CE6DD2E9E1CA3E4DEC9CC /* Pods_wouldyourather_wouldyouratherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDC90EE85391B95557E2A49 /* Pods_wouldyourather_wouldyouratherUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26FC634A48651C7AB872B54B /* Pods-wouldyouratherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wouldyouratherTests.debug.xcconfig"; path = "Target Support Files/Pods-wouldyouratherTests/Pods-wouldyouratherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3BE315C0918D1DC0F5FFF867 /* Pods-wouldyourather-wouldyouratherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wouldyourather-wouldyouratherUITests.debug.xcconfig"; path = "Target Support Files/Pods-wouldyourather-wouldyouratherUITests/Pods-wouldyourather-wouldyouratherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3EDC90EE85391B95557E2A49 /* Pods_wouldyourather_wouldyouratherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wouldyourather_wouldyouratherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		459E93246F91B62E4EDD19C6 /* Pods-wouldyouratherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wouldyouratherTests.release.xcconfig"; path = "Target Support Files/Pods-wouldyouratherTests/Pods-wouldyouratherTests.release.xcconfig"; sourceTree = "<group>"; };
+		500C8944CDA0FD575FA9FD73 /* Pods_wouldyourather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wouldyourather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53C4E966F91A390C783F4A49 /* Pods-wouldyourather-wouldyouratherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wouldyourather-wouldyouratherUITests.release.xcconfig"; path = "Target Support Files/Pods-wouldyourather-wouldyouratherUITests/Pods-wouldyourather-wouldyouratherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6AF3535029046B25009CA0C9 /* wouldyourather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wouldyourather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF3535329046B25009CA0C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AF3535529046B25009CA0C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +58,9 @@
 		6AF3537029046B26009CA0C9 /* wouldyouratherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wouldyouratherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF3537429046B26009CA0C9 /* wouldyouratherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wouldyouratherUITests.swift; sourceTree = "<group>"; };
 		6AF3537629046B26009CA0C9 /* wouldyouratherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wouldyouratherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6E986062BA2D81772BCA1312 /* Pods-wouldyourather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wouldyourather.debug.xcconfig"; path = "Target Support Files/Pods-wouldyourather/Pods-wouldyourather.debug.xcconfig"; sourceTree = "<group>"; };
+		7415DCEAB8E1D488702D9670 /* Pods-wouldyourather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wouldyourather.release.xcconfig"; path = "Target Support Files/Pods-wouldyourather/Pods-wouldyourather.release.xcconfig"; sourceTree = "<group>"; };
+		899E627BD318852D0F5E23A0 /* Pods_wouldyouratherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wouldyouratherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468795A1CFB3590FC89F0DCF /* Pods_wouldyourather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60A6EAAA60FC42A7D72A41EC /* Pods_wouldyouratherTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E7CE6DD2E9E1CA3E4DEC9CC /* Pods_wouldyourather_wouldyouratherUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17C5EB8D44F8EB8C70BCABC3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6E986062BA2D81772BCA1312 /* Pods-wouldyourather.debug.xcconfig */,
+				7415DCEAB8E1D488702D9670 /* Pods-wouldyourather.release.xcconfig */,
+				3BE315C0918D1DC0F5FFF867 /* Pods-wouldyourather-wouldyouratherUITests.debug.xcconfig */,
+				53C4E966F91A390C783F4A49 /* Pods-wouldyourather-wouldyouratherUITests.release.xcconfig */,
+				26FC634A48651C7AB872B54B /* Pods-wouldyouratherTests.debug.xcconfig */,
+				459E93246F91B62E4EDD19C6 /* Pods-wouldyouratherTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6AF3534729046B25009CA0C9 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +112,8 @@
 				6AF3536929046B26009CA0C9 /* wouldyouratherTests */,
 				6AF3537329046B26009CA0C9 /* wouldyouratherUITests */,
 				6AF3535129046B25009CA0C9 /* Products */,
+				17C5EB8D44F8EB8C70BCABC3 /* Pods */,
+				E8D37F5D786DE4B11E4E72D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +158,16 @@
 			path = wouldyouratherUITests;
 			sourceTree = "<group>";
 		};
+		E8D37F5D786DE4B11E4E72D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				500C8944CDA0FD575FA9FD73 /* Pods_wouldyourather.framework */,
+				3EDC90EE85391B95557E2A49 /* Pods_wouldyourather_wouldyouratherUITests.framework */,
+				899E627BD318852D0F5E23A0 /* Pods_wouldyouratherTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6AF3537A29046B26009CA0C9 /* Build configuration list for PBXNativeTarget "wouldyourather" */;
 			buildPhases = (
+				1E579779FBBD6B50C8CE0475 /* [CP] Check Pods Manifest.lock */,
 				6AF3534C29046B25009CA0C9 /* Sources */,
 				6AF3534D29046B25009CA0C9 /* Frameworks */,
 				6AF3534E29046B25009CA0C9 /* Resources */,
+				04160DA1DE73CF31024E529E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6AF3537D29046B26009CA0C9 /* Build configuration list for PBXNativeTarget "wouldyouratherTests" */;
 			buildPhases = (
+				1AED69ECE35F41D61A5F601B /* [CP] Check Pods Manifest.lock */,
 				6AF3536229046B26009CA0C9 /* Sources */,
 				6AF3536329046B26009CA0C9 /* Frameworks */,
 				6AF3536429046B26009CA0C9 /* Resources */,
@@ -169,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6AF3538029046B26009CA0C9 /* Build configuration list for PBXNativeTarget "wouldyouratherUITests" */;
 			buildPhases = (
+				D8EDB92D2BB1BEC43D810E9D /* [CP] Check Pods Manifest.lock */,
 				6AF3536C29046B26009CA0C9 /* Sources */,
 				6AF3536D29046B26009CA0C9 /* Frameworks */,
 				6AF3536E29046B26009CA0C9 /* Resources */,
+				B27458D6FAFCD47BE3D8FC5A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04160DA1DE73CF31024E529E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wouldyourather/Pods-wouldyourather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wouldyourather/Pods-wouldyourather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wouldyourather/Pods-wouldyourather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1AED69ECE35F41D61A5F601B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wouldyouratherTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E579779FBBD6B50C8CE0475 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wouldyourather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B27458D6FAFCD47BE3D8FC5A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wouldyourather-wouldyouratherUITests/Pods-wouldyourather-wouldyouratherUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wouldyourather-wouldyouratherUITests/Pods-wouldyourather-wouldyouratherUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wouldyourather-wouldyouratherUITests/Pods-wouldyourather-wouldyouratherUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8EDB92D2BB1BEC43D810E9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wouldyourather-wouldyouratherUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6AF3534C29046B25009CA0C9 /* Sources */ = {
@@ -432,6 +581,7 @@
 		};
 		6AF3537B29046B26009CA0C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E986062BA2D81772BCA1312 /* Pods-wouldyourather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -460,6 +610,7 @@
 		};
 		6AF3537C29046B26009CA0C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7415DCEAB8E1D488702D9670 /* Pods-wouldyourather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -488,6 +639,7 @@
 		};
 		6AF3537E29046B26009CA0C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26FC634A48651C7AB872B54B /* Pods-wouldyouratherTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +660,7 @@
 		};
 		6AF3537F29046B26009CA0C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 459E93246F91B62E4EDD19C6 /* Pods-wouldyouratherTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +681,7 @@
 		};
 		6AF3538129046B26009CA0C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BE315C0918D1DC0F5FFF867 /* Pods-wouldyourather-wouldyouratherUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +700,7 @@
 		};
 		6AF3538229046B26009CA0C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53C4E966F91A390C783F4A49 /* Pods-wouldyourather-wouldyouratherUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
