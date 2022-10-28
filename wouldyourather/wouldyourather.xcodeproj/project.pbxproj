@@ -18,6 +18,8 @@
 		6AF3536B29046B26009CA0C9 /* wouldyouratherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3536A29046B26009CA0C9 /* wouldyouratherTests.swift */; };
 		6AF3537529046B26009CA0C9 /* wouldyouratherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3537429046B26009CA0C9 /* wouldyouratherUITests.swift */; };
 		6AF3537729046B26009CA0C9 /* wouldyouratherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3537629046B26009CA0C9 /* wouldyouratherUITestsLaunchTests.swift */; };
+		6C011B57290B64CF00C4331F /* HomeFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C011B56290B64CF00C4331F /* HomeFeedViewController.swift */; };
+		6C011B59290B650900C4331F /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C011B58290B650900C4331F /* QuestionTableViewCell.swift */; };
 		8E7CE6DD2E9E1CA3E4DEC9CC /* Pods_wouldyourather_wouldyouratherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDC90EE85391B95557E2A49 /* Pods_wouldyourather_wouldyouratherUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		6AF3537029046B26009CA0C9 /* wouldyouratherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wouldyouratherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF3537429046B26009CA0C9 /* wouldyouratherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wouldyouratherUITests.swift; sourceTree = "<group>"; };
 		6AF3537629046B26009CA0C9 /* wouldyouratherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wouldyouratherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6C011B56290B64CF00C4331F /* HomeFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedViewController.swift; sourceTree = "<group>"; };
+		6C011B58290B650900C4331F /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		6E986062BA2D81772BCA1312 /* Pods-wouldyourather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wouldyourather.debug.xcconfig"; path = "Target Support Files/Pods-wouldyourather/Pods-wouldyourather.debug.xcconfig"; sourceTree = "<group>"; };
 		7415DCEAB8E1D488702D9670 /* Pods-wouldyourather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wouldyourather.release.xcconfig"; path = "Target Support Files/Pods-wouldyourather/Pods-wouldyourather.release.xcconfig"; sourceTree = "<group>"; };
 		899E627BD318852D0F5E23A0 /* Pods_wouldyouratherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wouldyouratherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +105,6 @@
 				26FC634A48651C7AB872B54B /* Pods-wouldyouratherTests.debug.xcconfig */,
 				459E93246F91B62E4EDD19C6 /* Pods-wouldyouratherTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -134,9 +137,11 @@
 				6AF3535529046B25009CA0C9 /* SceneDelegate.swift */,
 				6AF3535729046B25009CA0C9 /* ViewController.swift */,
 				6AF3535929046B25009CA0C9 /* Main.storyboard */,
+				6C011B58290B650900C4331F /* QuestionTableViewCell.swift */,
 				6AF3535C29046B26009CA0C9 /* Assets.xcassets */,
 				6AF3535E29046B26009CA0C9 /* LaunchScreen.storyboard */,
 				6AF3536129046B26009CA0C9 /* Info.plist */,
+				6C011B56290B64CF00C4331F /* HomeFeedViewController.swift */,
 			);
 			path = wouldyourather;
 			sourceTree = "<group>";
@@ -408,8 +413,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AF3535829046B25009CA0C9 /* ViewController.swift in Sources */,
+				6C011B59290B650900C4331F /* QuestionTableViewCell.swift in Sources */,
 				6AF3535429046B25009CA0C9 /* AppDelegate.swift in Sources */,
 				6AF3535629046B25009CA0C9 /* SceneDelegate.swift in Sources */,
+				6C011B57290B64CF00C4331F /* HomeFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
