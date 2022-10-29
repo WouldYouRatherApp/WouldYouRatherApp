@@ -11,28 +11,89 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="wouldyourather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAF-w6-mw9">
-                                <rect key="frame" x="158" y="355" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAF-w6-mw9">
+                                <rect key="frame" x="95" y="434" width="91" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QAF-w6-mw9" secondAttribute="height" multiplier="13:5" id="PI0-53-P5S"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Login">
+                                    <color key="baseBackgroundColor" red="0.3411764706" green="0.56470588239999997" blue="0.87450980389999999" alpha="0.6023644454" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <segue destination="F7j-Zg-baP" kind="presentation" modalPresentationStyle="fullScreen" id="dHN-mm-bo1"/>
+                                    <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m07-ZU-2y1"/>
+                                    <segue destination="F7j-Zg-baP" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="dHN-mm-bo1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5u-uo-Ugs">
+                                <rect key="frame" x="204" y="434" width="84" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="M5u-uo-Ugs" secondAttribute="height" multiplier="12:5" id="HK5-O7-0L1"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Sign Up">
+                                    <color key="baseBackgroundColor" red="0.3411764705882353" green="0.56470588235294117" blue="0.87450980392156863" alpha="0.60236444536423839" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S2e-Ma-aLA"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aHv-UQ-ooG">
+                                <rect key="frame" x="95" y="333" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aHv-UQ-ooG" secondAttribute="height" multiplier="100:17" id="MUf-Rb-LU3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ip-FI-s9U">
+                                <rect key="frame" x="95" y="375" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6ip-FI-s9U" secondAttribute="height" multiplier="100:17" id="Qbu-aQ-GX0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="balance" translatesAutoresizingMaskIntoConstraints="NO" id="QKy-QT-AV3">
+                                <rect key="frame" x="110" y="133" width="171" height="171"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QKy-QT-AV3" secondAttribute="height" multiplier="1:1" id="Cff-Nk-jdr"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QKy-QT-AV3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="86" id="264-H4-VSe"/>
+                            <constraint firstItem="QAF-w6-mw9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="95" id="4I6-Ug-PTg"/>
+                            <constraint firstItem="QAF-w6-mw9" firstAttribute="top" secondItem="6ip-FI-s9U" secondAttribute="bottom" constant="25" id="GAi-Uc-EZS"/>
+                            <constraint firstItem="M5u-uo-Ugs" firstAttribute="leading" secondItem="QAF-w6-mw9" secondAttribute="trailing" constant="18" id="I7k-DM-wrM"/>
+                            <constraint firstItem="aHv-UQ-ooG" firstAttribute="top" secondItem="QKy-QT-AV3" secondAttribute="bottom" constant="29" id="SBR-Nx-bUM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6ip-FI-s9U" secondAttribute="trailing" constant="95" id="Z3m-X9-Acb"/>
+                            <constraint firstItem="M5u-uo-Ugs" firstAttribute="leading" secondItem="QAF-w6-mw9" secondAttribute="trailing" constant="18" id="kR7-RK-Bc3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QKy-QT-AV3" secondAttribute="trailing" constant="109" id="l4h-Sy-fZ2"/>
+                            <constraint firstItem="QKy-QT-AV3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="nZI-Z6-5Sa"/>
+                            <constraint firstItem="6ip-FI-s9U" firstAttribute="top" secondItem="aHv-UQ-ooG" secondAttribute="bottom" constant="8" symbolic="YES" id="pK1-BD-rax"/>
+                            <constraint firstItem="aHv-UQ-ooG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="95" id="u3b-QR-PgM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aHv-UQ-ooG" secondAttribute="trailing" constant="95" id="vaA-Lz-QXl"/>
+                            <constraint firstItem="M5u-uo-Ugs" firstAttribute="top" secondItem="6ip-FI-s9U" secondAttribute="bottom" constant="25" id="x4I-Wp-a8a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M5u-uo-Ugs" secondAttribute="trailing" constant="102" id="xXQ-Mj-6e8"/>
+                            <constraint firstItem="6ip-FI-s9U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="95" id="yop-Zk-4RT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="6ip-FI-s9U" id="zCc-OT-7Dv"/>
+                        <outlet property="usernameField" destination="aHv-UQ-ooG" id="2PD-CV-wnG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-615" y="3"/>
+            <point key="canvasLocation" x="-615.38461538461536" y="2.8436018957345972"/>
         </scene>
         <!--Profile-->
         <scene sceneID="U31-hQ-3y2">
@@ -129,6 +190,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="balance" width="170.66667175292969" height="170.66667175292969"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
