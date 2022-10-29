@@ -143,4 +143,4 @@ Launch Screen
 
 Login Screen
 
-![](https://i.imgur.com/2wrxwuG.png
+![](https://i.imgur.com/2wrxwuG.png)
