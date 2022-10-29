@@ -134,3 +134,6 @@ Network requests by screen
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+<img width="388" alt="Screenshot 2022-10-28 at 12 37 21 AM" src="https://user-images.githubusercontent.com/77522068/198846875-7047a005-f34e-4945-a8a1-5f897acd5b55.png">
+
