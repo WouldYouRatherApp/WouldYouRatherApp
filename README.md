@@ -26,6 +26,7 @@ Users can create would you rather questions. Others can vote on the question and
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
+* [x] User can see a styled launch screen and app icon
 * [ ] User should be able to post would you rather questions to the feed
 * [ ] User should be able to have the option to upload a photo with their question
 * [ ] User should be able to vote on the poll
@@ -134,3 +135,13 @@ Network requests by screen
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+### Progress
+
+Launch Screen
+
+![](https://i.imgur.com/TLyZW2E.png)
+
+Login Screen
+
+![](https://i.imgur.com/2wrxwuG.png)

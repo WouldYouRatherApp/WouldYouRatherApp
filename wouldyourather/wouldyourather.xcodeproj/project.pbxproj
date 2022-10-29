@@ -18,6 +18,7 @@
 		6AF3536B29046B26009CA0C9 /* wouldyouratherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3536A29046B26009CA0C9 /* wouldyouratherTests.swift */; };
 		6AF3537529046B26009CA0C9 /* wouldyouratherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3537429046B26009CA0C9 /* wouldyouratherUITests.swift */; };
 		6AF3537729046B26009CA0C9 /* wouldyouratherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3537629046B26009CA0C9 /* wouldyouratherUITestsLaunchTests.swift */; };
+		6AF35384290CE2C9009CA0C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35383290CE2C9009CA0C9 /* LoginViewController.swift */; };
 		8E7CE6DD2E9E1CA3E4DEC9CC /* Pods_wouldyourather_wouldyouratherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDC90EE85391B95557E2A49 /* Pods_wouldyourather_wouldyouratherUITests.framework */; };
 		CACCB877290C89F9004C896C /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCB876290C89F9004C896C /* PostViewController.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		6AF3537029046B26009CA0C9 /* wouldyouratherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wouldyouratherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF3537429046B26009CA0C9 /* wouldyouratherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wouldyouratherUITests.swift; sourceTree = "<group>"; };
 		6AF3537629046B26009CA0C9 /* wouldyouratherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wouldyouratherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6AF35383290CE2C9009CA0C9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6E986062BA2D81772BCA1312 /* Pods-wouldyourather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wouldyourather.debug.xcconfig"; path = "Target Support Files/Pods-wouldyourather/Pods-wouldyourather.debug.xcconfig"; sourceTree = "<group>"; };
 		7415DCEAB8E1D488702D9670 /* Pods-wouldyourather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wouldyourather.release.xcconfig"; path = "Target Support Files/Pods-wouldyourather/Pods-wouldyourather.release.xcconfig"; sourceTree = "<group>"; };
 		899E627BD318852D0F5E23A0 /* Pods_wouldyouratherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wouldyouratherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,7 @@
 				6AF3535E29046B26009CA0C9 /* LaunchScreen.storyboard */,
 				6AF3536129046B26009CA0C9 /* Info.plist */,
 				CACCB876290C89F9004C896C /* PostViewController.swift */,
+				6AF35383290CE2C9009CA0C9 /* LoginViewController.swift */,
 			);
 			path = wouldyourather;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CACCB877290C89F9004C896C /* PostViewController.swift in Sources */,
+				6AF35384290CE2C9009CA0C9 /* LoginViewController.swift in Sources */,
 				6AF3535829046B25009CA0C9 /* ViewController.swift in Sources */,
 				6AF3535429046B25009CA0C9 /* AppDelegate.swift in Sources */,
 				6AF3535629046B25009CA0C9 /* SceneDelegate.swift in Sources */,
