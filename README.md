@@ -145,3 +145,7 @@ Launch Screen
 Login Screen
 
 ![](https://i.imgur.com/2wrxwuG.png)
+
+Home Feed
+
+<img width="388" alt="Screenshot 2022-10-28 at 12 37 21 AM" src="https://user-images.githubusercontent.com/77522068/198846875-7047a005-f34e-4945-a8a1-5f897acd5b55.png">
