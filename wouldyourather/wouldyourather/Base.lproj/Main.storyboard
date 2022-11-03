@@ -157,7 +157,7 @@
                             <constraint firstItem="1iF-1P-rRF" firstAttribute="top" secondItem="q9k-LJ-z02" secondAttribute="bottom" constant="8" symbolic="YES" id="tsX-gh-TIe"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" selectedImage="user_empty" id="sVU-Os-NjJ"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="user_empty" selectedImage="user_empty" id="sVU-Os-NjJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9tL-wT-Gus" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,7 +173,7 @@
                         <viewLayoutGuide key="safeArea" id="2pc-Pb-5Xp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Trending/Followers" selectedImage="flame_empty" id="XU6-IP-a6b"/>
+                    <tabBarItem key="tabBarItem" title="Trending/Followers" image="flame_empty" selectedImage="flame_empty" id="XU6-IP-a6b"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rp7-Gl-9FO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -320,7 +320,7 @@
                             <constraint firstItem="tf0-vY-aLM" firstAttribute="top" secondItem="FHd-jY-h2e" secondAttribute="top" constant="60" id="qvs-Z1-jHy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Main Feed" selectedImage="home_empty" id="u5v-dI-6ok"/>
+                    <tabBarItem key="tabBarItem" title="Main Feed" image="home_empty" selectedImage="home_empty" id="u5v-dI-6ok"/>
                     <connections>
                         <outlet property="questionTableView" destination="PW7-gL-YD9" id="Qnl-sg-U9Q"/>
                     </connections>
