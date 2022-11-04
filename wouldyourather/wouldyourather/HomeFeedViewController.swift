@@ -12,8 +12,8 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var questionTableView: UITableView!
     
-    var posts = [PFObject]()
-    var selectedPost: PFObject!
+    var questions = [PFObject]()
+    var selectedQuestion: PFObject!
     
     override func viewDidLoad() {
         questionTableView.dataSource = self
@@ -24,15 +24,47 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let query = PFQuery(className: "User")
+        query.includeKeys(["author", "comments", "comments.author"])
+        query.limit = 10
+        query.findObjectsInBackground { (questions, error) in
+            if questions != nil {
+                self.questions = questions!
+                self.questionTableView.reloadData()
+                print("questions exist")
+            } else {
+                print("no questions")
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5 // change later
+//        print("hello2")
+        print(questions.count)
+        return questions.count
+//        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel!.text = "row: \(indexPath.row)"
+        let cell = questionTableView.dequeueReusableCell(withIdentifier: "QuestionTableViewCell") as! QuestionTableViewCell
+//        let question = questions[indexPath.row]
         
-        return  cell
+//        let user = question["author"] as! PFUser
+//        cell.usernameLabel.text = user.username
+//        cell.fullNameLabel.text = user["fullName"] as? String
+//
+//        cell.option1Label.text = question["choiceA"] as? String
+//        cell.option2Label.text = question["choiceB"] as? String
+        
+        cell.fullNameLabel.text = "Jane Doe"
+        cell.usernameLabel.text = "@JaneDoe"
+        cell.option1Label.text = "have telekinesis"
+        cell.option2Label.text = "have telepathy"
+        
+        return cell
     }
 
     /*
