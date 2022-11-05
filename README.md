@@ -12,7 +12,8 @@
 Users can create would you rather questions. Others can vote on the question and see results afterwards. Comments feature also implemented.
 
 ### Current Progress
-![][https://imgur.com/Wl4yvZJ.gif]
+
+<img src='https://imgur.com/Wl4yvZJ.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### App Evaluation
 - **Category:** Social Media App
