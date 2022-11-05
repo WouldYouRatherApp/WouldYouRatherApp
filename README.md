@@ -33,7 +33,7 @@ Users can create would you rather questions. Others can vote on the question and
 * [x] Users can create an account and log in
 * [x] User should be able to post would you rather questions
 * [ ] User should be able to see posts on their feed
-* [ ] User should be able to have the option to upload a photo with their question
+* [x] User should be able to have the option to upload a photo with their question
 * [ ] User should be able to vote on the poll
 * [ ] User can upvote other peoples posts
 * [ ] User can comment on other peoples posts
