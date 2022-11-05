@@ -37,7 +37,7 @@ Users can create would you rather questions. Others can vote on the question and
 * [ ] User should be able to vote on the poll
 * [ ] User can upvote other peoples posts
 * [ ] User can comment on other peoples posts
-* [ ] User can see two tabs, one main feed (latests posts) and another tab with trending posts (posts with the most amount of likes at the top)
+* [x] User can see two tabs, one main feed (latests posts) and another tab with trending posts (posts with the most amount of likes at the top)
 * [ ] User can view results after answering a poll
 
 **Optional Nice-to-have Stories**
