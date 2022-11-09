@@ -301,6 +301,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Trending" image="flame_empty" selectedImage="flame_empty" id="XU6-IP-a6b"/>
+                    <connections>
+                        <outlet property="wyrTableView" destination="yWw-YX-YY7" id="26d-53-XKX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rp7-Gl-9FO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
