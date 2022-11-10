@@ -27,7 +27,7 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let query = PFQuery(className: "User")
+        let query = PFQuery(className: "Question")
         query.includeKeys(["author", "comments", "comments.author"])
         query.limit = 10
         query.findObjectsInBackground { (questions, error) in
@@ -42,27 +42,34 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print("hello2")
         print(questions.count)
         return questions.count
-//        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = questionTableView.dequeueReusableCell(withIdentifier: "QuestionTableViewCell") as! QuestionTableViewCell
-//        let question = questions[indexPath.row]
+//        let cell = QuestionTableViewCell()
+        let question = questions[indexPath.row]
         
-//        let user = question["author"] as! PFUser
-//        cell.usernameLabel.text = user.username
-//        cell.fullNameLabel.text = user["fullName"] as? String
-//
-//        cell.option1Label.text = question["choiceA"] as? String
-//        cell.option2Label.text = question["choiceB"] as? String
+        let user = question["author"] as! PFUser
+//        let upvotedQuestions = user["upvotedQuestions"] as! [String]
+        print(user["upvotedQuestions"])
+        cell.usernameLabel.text = user["username"] as? String
+        cell.fullNameLabel.text = user["fullName"] as? String
+
+        cell.option1Label.text = question["choiceA"] as? String
+        cell.option2Label.text = question["choiceB"] as? String
         
-        cell.fullNameLabel.text = "Jane Doe"
-        cell.usernameLabel.text = "@JaneDoe"
-        cell.option1Label.text = "have telekinesis"
-        cell.option2Label.text = "have telepathy"
+//        if (upvotedQuestions.contains(question)) {
+//            cell.setUpvote(true)
+//        }
+//        else {
+//            cell.setUpvote(false)
+//        }
+//        cell.fullNameLabel.text = "Jane Doe"
+//        cell.usernameLabel.text = "@JaneDoe"
+//        cell.option1Label.text = "have telekinesis"
+//        cell.option2Label.text = "have telepathy"
         
         return cell
     }
