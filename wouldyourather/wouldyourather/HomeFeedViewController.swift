@@ -78,6 +78,11 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         let cellOption1Tapped = UITapGestureRecognizer(target: self, action:     #selector(optionTapped))
         cell.option1Label.isUserInteractionEnabled = true// UILabel made available for touch interaction
         cell.option1Label.addGestureRecognizer(cellOption1Tapped) //gesture added
+        
+        let cellOption2Tapped = UITapGestureRecognizer(target: self, action:     #selector(optionTapped))
+        cell.option2Label.isUserInteractionEnabled = true// UILabel made available for touch interaction
+        cell.option2Label.addGestureRecognizer(cellOption2Tapped) //gesture added
+
 
         //Method called on touch of nameLabel
 
