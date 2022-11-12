@@ -170,17 +170,17 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         let view = sender as? UIView
         let position = view?.convert(CGPoint.zero, to: self.questionTableView)
         let path = questionTableView.indexPathForRow(at: position!) as? IndexPath
-        let question = questions[path!.row]
-        let comments = (question["comments"] as? [PFObject]) ?? []
         
-//        print(type(of: question))
-//        print(question)
-//        print(type(of: comments))
-        
-        // pass question id to CommentsViewController
-        let commentsViewController = segue.destination as! CommentsViewController
-        commentsViewController.selectedQuestion = question
-        commentsViewController.comments = comments
+        if (path != nil) {
+            let question = questions[path!.row]
+            let comments = (question["comments"] as? [PFObject]) ?? []
+            
+            // pass question id to CommentsViewController
+            let commentsViewController = segue.destination as! CommentsViewController
+            commentsViewController.selectedQuestion = question
+            commentsViewController.comments = comments
+        }
+
     }
 
 }
