@@ -32,13 +32,13 @@ Users can create would you rather questions. Others can vote on the question and
 * [x] User can see a styled launch screen and app icon
 * [x] Users can create an account and log in
 * [x] User should be able to post would you rather questions
-* [ ] User should be able to see posts on their feed
+* [x] User should be able to see posts on their feed
 * [x] User should be able to have the option to upload a photo with their question
-* [ ] User should be able to vote on the poll
+* [x] User should be able to vote on the poll
 * [ ] User can upvote other peoples posts
-* [ ] User can comment on other peoples posts
+* [x] User can comment on other peoples posts
 * [x] User can see two tabs, one main feed (latests posts) and another tab with trending posts (posts with the most amount of likes at the top)
-* [ ] User can view results after answering a poll
+* [x] User can view results after answering a poll
 
 **Optional Nice-to-have Stories**
 * [ ] User can categorize "would you rathers" with a hashtag so any user can have "catered" questions
