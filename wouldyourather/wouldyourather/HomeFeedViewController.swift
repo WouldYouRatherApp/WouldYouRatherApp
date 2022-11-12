@@ -49,24 +49,15 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
 
     
     @objc func option1Tapped(tapGestureRecognizer: UITapGestureRecognizer){
-//        let view = tapGestureRecognizer.view
-//        let indexPath = tableView.indexPathForView(view)
-//
-//        let question = questions[indexPath.row]
-
-        
-        print(tapGestureRecognizer.view)
-        print(tapGestureRecognizer)
-        print("tapped")
-        
         let touch = tapGestureRecognizer.location(in: questionTableView)
         let indexPath = questionTableView.indexPathForRow(at: touch)
-        print(indexPath!.row)
-        
+        let cell = questionTableView.cellForRow(at: indexPath!) as? QuestionTableViewCell
         let question = questions[indexPath!.row]
-        print(question["votesA"])
-        // let id = question["objectId"]
+
         question.incrementKey("votesA")
+        
+        let user = PFUser.current()!
+        question.add(user, forKey: "votedUsers")
         
         question.saveInBackground {(success, error) in
             if (success){
@@ -76,40 +67,41 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             }
         }
         
-        print(question)
-        print(question["votesA"])
+        let votesA = question["votesA"] as? Double
+        let votesB = question["votesB"] as? Double
+        let totalVotes = votesA! + votesB!
+        let percA = Int(floor((votesA! / totalVotes) * 100))
+        let percB = Int(floor((votesB! / totalVotes) * 100))
         
-//        let query = PFQuery(className:"Question")
-//        query.getObjectInBackground(withId: id) { (question: PFObject?, error: Error?) in
-//            if let error = error {
-//                print(error.localizedDescription)
-//            } else if let question = question {
-//                question["votesA"] = question["votesA"] as! Int + 1
-//                question.saveInBackground()
-//            }
-//        }
-        
-        print(question["votesA"] as! Int)
+        cell!.percentagesLabel.text = String(percA) + "%-" + String (percB) + "%"
     }
 
     @objc func option2Tapped(tapGestureRecognizer: UITapGestureRecognizer){
-//        let view = tapGestureRecognizer.view
-//        let indexPath = tableView.indexPathForView(view)
-//
-//        let question = questions[indexPath.row]
-
-        
-        print(tapGestureRecognizer.view)
-        print(tapGestureRecognizer)
-        print("tapped")
-        
         let touch = tapGestureRecognizer.location(in: questionTableView)
         let indexPath = questionTableView.indexPathForRow(at: touch)
-        print(indexPath!.row)
-        
+        let cell = questionTableView.cellForRow(at: indexPath!) as? QuestionTableViewCell
         let question = questions[indexPath!.row]
-        print(question["votesB"])
+
+        question.incrementKey("votesB")
         
+        let user = PFUser.current()!
+        question.add(user, forKey: "votedUsers")
+        
+        question.saveInBackground {(success, error) in
+            if (success){
+                print("vote saved")
+            } else {
+                print("error saving vote")
+            }
+        }
+        
+        let votesA = question["votesA"] as? Double
+        let votesB = question["votesB"] as? Double
+        let totalVotes = votesA! + votesB!
+        let percA = Int(floor((votesA! / totalVotes) * 100))
+        let percB = Int(floor((votesB! / totalVotes) * 100))
+
+        cell!.percentagesLabel.text = String(percA) + "% - " + String (percB) + "%"
     }
 
     
@@ -120,22 +112,33 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let user = question["author"] as! PFUser
 //        let upvotedQuestions = user["upvotedQuestions"] as! [String]
-        print(user["upvotedQuestions"])
+        // print(user["upvotedQuestions"])
         cell.usernameLabel.text = user["username"] as? String
         cell.fullNameLabel.text = user["fullName"] as? String
 
         cell.option1Label.text = question["choiceA"] as? String
         cell.option2Label.text = question["choiceB"] as? String
         
-        print(cell.option1Label)
+        // print(cell.option1Label)
+        let currentUser = PFUser.current()!
+        let questionVotedUsers = (question["votedUsers"] as? [PFObject]) ?? []
+//        print(questionVotedUsers)
+//        print(currentUser)
+        
+        // current bug: trying to make sure users can't vote more than once
+        if questionVotedUsers.contains(currentUser) {
+            cell.option1Label.isUserInteractionEnabled = false
+            cell.option2Label.isUserInteractionEnabled = false
+        } else {
+            cell.option1Label.isUserInteractionEnabled = true
+            cell.option2Label.isUserInteractionEnabled = true
+        }
         
         //Adding tap gesture
         let cellOption1Tapped = UITapGestureRecognizer(target: self, action:     #selector(option1Tapped))
-        cell.option1Label.isUserInteractionEnabled = true// UILabel made available for touch interaction
         cell.option1Label.addGestureRecognizer(cellOption1Tapped) //gesture added
         
         let cellOption2Tapped = UITapGestureRecognizer(target: self, action:     #selector(option2Tapped))
-        cell.option2Label.isUserInteractionEnabled = true// UILabel made available for touch interaction
         cell.option2Label.addGestureRecognizer(cellOption2Tapped) //gesture added
 
 
