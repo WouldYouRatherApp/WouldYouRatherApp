@@ -19,6 +19,8 @@ class QuestionTableViewCell: UITableViewCell {
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var upvoteButton: UIButton!
 
+    @IBOutlet weak var percentagesLabel: UILabel!
+
     @IBAction func upvoteQuestion(_ sender: Any) {
     }
     
