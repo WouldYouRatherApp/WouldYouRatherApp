@@ -61,7 +61,7 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let touch = tapGestureRecognizer.location(in: questionTableView)
         let indexPath = questionTableView.indexPathForRow(at: touch)
-        print(indexPath!.row)
+        print(questions[indexPath!.row])
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
