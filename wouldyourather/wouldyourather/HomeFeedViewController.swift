@@ -112,13 +112,12 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let user = question["author"] as! PFUser
 //        let upvotedQuestions = user["upvotedQuestions"] as! [String]
-        // print(user["upvotedQuestions"])
         cell.usernameLabel.text = user["username"] as? String
         cell.fullNameLabel.text = user["fullName"] as? String
 
         cell.option1Label.text = question["choiceA"] as? String
         cell.option2Label.text = question["choiceB"] as? String
-        
+
         // print(cell.option1Label)
         let currentUser = PFUser.current()!
         let questionVotedUsers = (question["votedUsers"] as? [PFObject]) ?? []
@@ -159,14 +158,29 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        // find selected question
+        print("loading comments")
+        let view = sender as? UIView
+        let position = view?.convert(CGPoint.zero, to: self.questionTableView)
+        let path = questionTableView.indexPathForRow(at: position!) as? IndexPath
+        
+        if (path != nil) {
+            let question = questions[path!.row]
+            let comments = (question["comments"] as? [PFObject]) ?? []
+            
+            // pass question id to CommentsViewController
+            let commentsViewController = segue.destination as! CommentsViewController
+            commentsViewController.selectedQuestion = question
+            commentsViewController.comments = comments
+        }
+
     }
-    */
 
 }
