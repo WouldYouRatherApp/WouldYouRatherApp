@@ -46,6 +46,20 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         return questions.count
     }
     
+
+    
+    @objc func optionTapped(tapGestureRecognizer: UITapGestureRecognizer){
+//        let view = tapGestureRecognizer.view
+//        let indexPath = tableView.indexPathForView(view)
+//
+//        let question = questions[indexPath.row]
+        print(question)
+        print(tapGestureRecognizer.view)
+        print(tapGestureRecognizer)
+        print(tapGestureRecognizer.cell)
+        print("tapped")
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = questionTableView.dequeueReusableCell(withIdentifier: "QuestionTableViewCell") as! QuestionTableViewCell
 //        let cell = QuestionTableViewCell()
@@ -59,6 +73,14 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
 
         cell.option1Label.text = question["choiceA"] as? String
         cell.option2Label.text = question["choiceB"] as? String
+        
+        //Adding tap gesture
+        let cellOption1Tapped = UITapGestureRecognizer(target: self, action:     #selector(optionTapped))
+        cell.option1Label.isUserInteractionEnabled = true// UILabel made available for touch interaction
+        cell.option1Label.addGestureRecognizer(cellOption1Tapped) //gesture added
+
+        //Method called on touch of nameLabel
+
         
 //        if (upvotedQuestions.contains(question)) {
 //            cell.setUpvote(true)
