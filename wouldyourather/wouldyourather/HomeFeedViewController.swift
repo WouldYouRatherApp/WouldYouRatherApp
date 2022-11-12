@@ -74,14 +74,29 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        // find selected question
+        print("loading comments")
+        let view = sender as? UIView
+        let position = view?.convert(CGPoint.zero, to: self.questionTableView)
+        let path = questionTableView.indexPathForRow(at: position!) as? IndexPath
+        let question = questions[path!.row]
+        let comments = (question["comments"] as? [PFObject]) ?? []
+        
+//        print(type(of: question))
+//        print(question)
+//        print(type(of: comments))
+        
+        // pass question id to CommentsViewController
+        let commentsViewController = segue.destination as! CommentsViewController
+        commentsViewController.selectedQuestion = question
+        commentsViewController.comments = comments
     }
-    */
 
 }

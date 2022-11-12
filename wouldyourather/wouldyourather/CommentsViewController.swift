@@ -9,73 +9,47 @@ import UIKit
 import MessageInputBar
 import Parse
 
-class CommentsViewController: UIViewController, MessageInputBarDelegate {
+class CommentsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MessageInputBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
     let commentBar = MessageInputBar()
     var showsCommentBar = false
-    
-    var questions = [PFObject]()
-    var comments = [PFObject]()
-    var commentsArray: [String] = []
+
     var selectedQuestion: PFObject!
+    var comments: [PFObject] = []
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
         commentBar.inputTextView.placeholder = "Add a comment.."
         commentBar.sendButton.title = "Post"
         commentBar.delegate = self
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         tableView.keyboardDismissMode = .interactive
         
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardWillBeHidden(note: )), name: UIResponder.keyboardWillHideNotification, object: nil)
+
+        // Do any additional setup after loading the view.
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        
-        let query = PFQuery(className: "comments")
-        query.includeKeys(["author"])
-        query.limit = 20
-        query.findObjectsInBackground { (comments, error) in
-            if comments != nil {
-                self.comments = comments!
-                self.tableView.reloadData()
-                print("comments exist")
-                print(comments?[0])
-                print(comments?.count)
-            } else {
-                print("no comments")
-            }
-        }
-    }
-    
-    // loading comments
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        let question = questions[section]
-//        let comments = (questions["comments"] as? [PFObject]) ?? []
-//        print(comments[0])
-        
-//        return comments.count + 1
-        return 0
+        return comments.count + 1 // change later
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(indexPath)
-        let question = questions[indexPath.section]
-        let comments = (question["comments"] as? [PFObject]) ?? []
-        
-        if indexPath.row <= comments.count {
+        if indexPath.row != comments.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell") as! CommentTableViewCell
             
-            let comment = comments[indexPath.row - 1]
+            let comment = comments[indexPath.row]
+
             cell.commentTextLabel.text = comment["text"] as? String
-            
+    
             let user = comment["author"] as? PFUser
             cell.usernameLabel.text = user?.username
-            
+    
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
@@ -83,10 +57,9 @@ class CommentsViewController: UIViewController, MessageInputBarDelegate {
             return cell
         }
     }
-
     
     
-    // functions for add comment keyboard
+    // adding comments
     @objc func keyboardWillBeHidden(note: Notification) {
         commentBar.inputTextView.text = nil
         showsCommentBar = false
@@ -103,9 +76,9 @@ class CommentsViewController: UIViewController, MessageInputBarDelegate {
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         // Create the comment
-        let comment = PFObject(className: "comments")
+        let comment = PFObject(className: "Comments")
         comment["text"] = text
-        comment["question"] = selectedQuestion
+        comment["post"] = selectedQuestion
         comment["author"] = PFUser.current()!
 
         selectedQuestion.add(comment, forKey: "comments")
@@ -127,5 +100,12 @@ class CommentsViewController: UIViewController, MessageInputBarDelegate {
         commentBar.inputTextView.resignFirstResponder()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == comments.count {
+            showsCommentBar = true
+            becomeFirstResponder()
+            commentBar.inputTextView.becomeFirstResponder()
+        }
+    }
 }
 
