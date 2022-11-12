@@ -16,17 +16,18 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     let commentBar = MessageInputBar()
     var showsCommentBar = false
 
+    var questions = [PFObject]()
     var selectedQuestion: PFObject!
     var comments: [PFObject] = []
+    var commentsArray: [String] = []
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         commentBar.inputTextView.placeholder = "Add a comment.."
         commentBar.sendButton.title = "Post"
         commentBar.delegate = self
-        
         tableView.delegate = self
         tableView.dataSource = self
-        
         tableView.keyboardDismissMode = .interactive
         
         let center = NotificationCenter.default
@@ -49,7 +50,6 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     
             let user = comment["author"] as? PFUser
             cell.usernameLabel.text = user?.username
-    
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
@@ -57,9 +57,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
             return cell
         }
     }
-    
-    
-    // adding comments
+
     @objc func keyboardWillBeHidden(note: Notification) {
         commentBar.inputTextView.text = nil
         showsCommentBar = false
@@ -76,9 +74,9 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         // Create the comment
-        let comment = PFObject(className: "Comments")
+        let comment = PFObject(className: "comments")
         comment["text"] = text
-        comment["post"] = selectedQuestion
+        comment["question"] = selectedQuestion
         comment["author"] = PFUser.current()!
 
         selectedQuestion.add(comment, forKey: "comments")
@@ -99,7 +97,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
         becomeFirstResponder()
         commentBar.inputTextView.resignFirstResponder()
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == comments.count {
             showsCommentBar = true

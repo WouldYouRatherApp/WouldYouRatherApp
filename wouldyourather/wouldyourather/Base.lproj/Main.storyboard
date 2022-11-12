@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -241,12 +241,14 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="have telekinesis (the ability to move things with your mind)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdC-WJ-6Kx" userLabel="option1 Label">
                                                             <rect key="frame" x="8" y="7.9999999999999893" width="146" height="50.333333333333343"/>
+                                                            <gestureRecognizers/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="jdC-WJ-6Kx" secondAttribute="bottom" constant="10" id="J7B-nt-nyG"/>
                                                         <constraint firstItem="jdC-WJ-6Kx" firstAttribute="top" secondItem="QLH-S7-mdK" secondAttribute="top" constant="8" id="MYp-6z-9MJ"/>
@@ -291,12 +293,20 @@
                                                         <action selector="upvoteQuestion:" destination="L0u-5v-bF1" eventType="touchUpInside" id="hH6-dG-ZNy"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjE-tN-5Vc">
+                                                    <rect key="frame" x="152.66666666666666" y="207" width="88.333333333333343" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="AWg-cj-vAP" firstAttribute="leading" secondItem="XKA-ZQ-Ay6" secondAttribute="trailing" constant="3.0000000000000568" id="25s-un-FEt"/>
                                                 <constraint firstAttribute="trailing" secondItem="pfZ-7F-k9a" secondAttribute="trailing" constant="92" id="2wA-yy-rcL"/>
                                                 <constraint firstAttribute="trailing" secondItem="f2X-mb-zmJ" secondAttribute="trailing" constant="20" id="4VV-iF-9s2"/>
                                                 <constraint firstItem="AWg-cj-vAP" firstAttribute="top" secondItem="QLH-S7-mdK" secondAttribute="bottom" constant="11" id="79t-ZA-boR"/>
+                                                <constraint firstItem="gjE-tN-5Vc" firstAttribute="leading" secondItem="lwB-oh-CMj" secondAttribute="leading" constant="152.66999999999999" id="AnP-xV-N2l"/>
+                                                <constraint firstItem="XKA-ZQ-Ay6" firstAttribute="leading" secondItem="gjE-tN-5Vc" secondAttribute="trailing" constant="39.333333333333314" id="HYf-fz-h0q"/>
                                                 <constraint firstAttribute="trailing" secondItem="AWg-cj-vAP" secondAttribute="trailing" constant="16" id="NBQ-vS-Vks"/>
                                                 <constraint firstItem="WfN-DA-nYP" firstAttribute="leading" secondItem="lwB-oh-CMj" secondAttribute="leading" constant="20" id="NE7-sy-fFU"/>
                                                 <constraint firstAttribute="bottom" secondItem="XKA-ZQ-Ay6" secondAttribute="bottom" constant="6" id="NMv-J4-QIQ"/>
@@ -305,6 +315,7 @@
                                                 <constraint firstItem="SHJ-nc-VmG" firstAttribute="top" secondItem="snW-Ze-EvR" secondAttribute="bottom" constant="8" symbolic="YES" id="PX8-Ba-h3x"/>
                                                 <constraint firstItem="snW-Ze-EvR" firstAttribute="top" secondItem="lwB-oh-CMj" secondAttribute="top" constant="18.670000000000002" id="R3y-lf-AZH"/>
                                                 <constraint firstItem="XKA-ZQ-Ay6" firstAttribute="top" secondItem="QLH-S7-mdK" secondAttribute="bottom" constant="9" id="SSf-FQ-4aC"/>
+                                                <constraint firstAttribute="bottom" secondItem="gjE-tN-5Vc" secondAttribute="bottom" constant="12" id="Sth-ul-TVs"/>
                                                 <constraint firstItem="XKA-ZQ-Ay6" firstAttribute="top" secondItem="f2X-mb-zmJ" secondAttribute="bottom" constant="9" id="VX8-qr-0ja"/>
                                                 <constraint firstItem="snW-Ze-EvR" firstAttribute="leading" secondItem="WfN-DA-nYP" secondAttribute="trailing" constant="17" id="Y8S-0u-Clq"/>
                                                 <constraint firstAttribute="trailing" secondItem="TUs-YL-Rrp" secondAttribute="trailing" constant="195" id="b4w-Xj-rH4"/>
@@ -325,6 +336,7 @@
                                                 <constraint firstItem="QLH-S7-mdK" firstAttribute="leading" secondItem="lwB-oh-CMj" secondAttribute="leading" constant="20" id="vlZ-zF-RjY"/>
                                                 <constraint firstItem="TUs-YL-Rrp" firstAttribute="leading" secondItem="QLH-S7-mdK" secondAttribute="trailing" constant="12" id="xdq-Hu-6VZ"/>
                                                 <constraint firstItem="SHJ-nc-VmG" firstAttribute="leading" secondItem="WfN-DA-nYP" secondAttribute="trailing" constant="17" id="xkX-3j-ioA"/>
+                                                <constraint firstItem="gjE-tN-5Vc" firstAttribute="top" secondItem="TUs-YL-Rrp" secondAttribute="bottom" constant="13" id="yPU-uQ-EWS"/>
                                                 <constraint firstItem="TUs-YL-Rrp" firstAttribute="top" secondItem="lwB-oh-CMj" secondAttribute="topMargin" constant="107" id="zlA-Sm-L94"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -334,6 +346,7 @@
                                             <outlet property="fullNameLabel" destination="snW-Ze-EvR" id="c6y-wY-Mi3"/>
                                             <outlet property="option1Label" destination="jdC-WJ-6Kx" id="yby-mt-ydO"/>
                                             <outlet property="option2Label" destination="dbv-h3-Jlo" id="wjk-YM-i2N"/>
+                                            <outlet property="percentagesLabel" destination="gjE-tN-5Vc" id="b2H-dC-1sY"/>
                                             <outlet property="pfp" destination="WfN-DA-nYP" id="sGF-2R-VN1"/>
                                             <outlet property="upvoteButton" destination="AWg-cj-vAP" id="BQx-jM-CeN"/>
                                             <outlet property="usernameLabel" destination="SHJ-nc-VmG" id="hmM-ye-7e5"/>
@@ -448,7 +461,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TV8-sw-0Pf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="578" y="1563"/>
+            <point key="canvasLocation" x="510.76923076923077" y="1569.6682464454975"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="a0d-6c-LhT">
@@ -459,7 +472,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.viewfinder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UZx-H5-Dav">
-                                <rect key="frame" x="12" y="185" width="180" height="154.99999999999994"/>
+                                <rect key="frame" x="12" y="173.33333333333334" width="180" height="155"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -489,7 +502,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.viewfinder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Xfy-zS-INO">
-                                <rect key="frame" x="198" y="185" width="180" height="154.99999999999994"/>
+                                <rect key="frame" x="198" y="173.33333333333334" width="180" height="155"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
