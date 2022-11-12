@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -106,7 +106,7 @@
                                     <color key="baseBackgroundColor" red="0.3411764706" green="0.56470588239999997" blue="0.87450980389999999" alpha="0.6023644454" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="onSignUp:" destination="SMH-FD-1vE" eventType="touchUpInside" id="4xA-of-XC8"/>
+                                    <action selector="onSignUp:" destination="SMH-FD-1vE" eventType="touchUpInside" id="pVY-ig-e8h"/>
                                     <segue destination="F7j-Zg-baP" kind="presentation" identifier="signupSegue" modalPresentationStyle="fullScreen" id="VGS-wJ-Xms"/>
                                 </connections>
                             </button>
@@ -133,9 +133,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="fullNamefField" destination="xfk-Jf-w1I" id="c5a-YF-XnC"/>
-                        <outlet property="passwordField" destination="dEX-7M-6Vt" id="4Cp-bP-FNr"/>
-                        <outlet property="usernameField" destination="yct-Wy-WPN" id="2lS-e3-FoV"/>
+                        <outlet property="fullNameField" destination="xfk-Jf-w1I" id="Qgu-e7-pQa"/>
+                        <outlet property="passwordField" destination="dEX-7M-6Vt" id="YRd-Wh-yPy"/>
+                        <outlet property="usernameField" destination="yct-Wy-WPN" id="9bK-1k-8mR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAk-1W-9bq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -557,7 +557,7 @@
                                     <color key="baseBackgroundColor" red="0.3411764706" green="0.56470588239999997" blue="0.87450980389999999" alpha="0.6023644454" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="onSignIn:" destination="Sr1-7Z-Osk" eventType="touchUpInside" id="gZz-NT-zJV"/>
+                                    <action selector="onSignIn:" destination="Sr1-7Z-Osk" eventType="touchUpInside" id="N1X-rZ-9Ou"/>
                                     <segue destination="F7j-Zg-baP" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="dKg-zN-dDE"/>
                                 </connections>
                             </button>
@@ -579,8 +579,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="passwordField" destination="I2I-hn-dCc" id="KbE-zZ-dnh"/>
-                        <outlet property="usernameField" destination="XRr-4c-dbD" id="eXG-gM-xN3"/>
+                        <outlet property="passwordField" destination="I2I-hn-dCc" id="U99-Dl-vil"/>
+                        <outlet property="usernameField" destination="XRr-4c-dbD" id="FuD-LE-5A0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjW-hF-NOg" sceneMemberID="firstResponder"/>
