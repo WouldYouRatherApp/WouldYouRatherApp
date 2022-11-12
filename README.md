@@ -11,6 +11,9 @@
 ### Description
 Users can create would you rather questions. Others can vote on the question and see results afterwards. Comments feature also implemented.
 
+### Current Progress
+
+<img src='https://imgur.com/Wl4yvZJ.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### App Evaluation
 - **Category:** Social Media App
@@ -27,12 +30,14 @@ Users can create would you rather questions. Others can vote on the question and
 
 **Required Must-have Stories**
 * [x] User can see a styled launch screen and app icon
-* [ ] User should be able to post would you rather questions to the feed
-* [ ] User should be able to have the option to upload a photo with their question
+* [x] Users can create an account and log in
+* [x] User should be able to post would you rather questions
+* [ ] User should be able to see posts on their feed
+* [x] User should be able to have the option to upload a photo with their question
 * [ ] User should be able to vote on the poll
 * [ ] User can upvote other peoples posts
 * [ ] User can comment on other peoples posts
-* [ ] User can see two tabs, one main feed (latests posts) and another tab with trending posts (posts with the most amount of likes at the top)
+* [x] User can see two tabs, one main feed (latests posts) and another tab with trending posts (posts with the most amount of likes at the top)
 * [ ] User can view results after answering a poll
 
 **Optional Nice-to-have Stories**
