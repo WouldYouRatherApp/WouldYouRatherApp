@@ -9,6 +9,7 @@ target 'wouldyourather' do
   pod 'Parse'
   pod 'AlamofireImage'
   pod 'MessageInputBar'
+  pod 'Parse'
 
   target 'wouldyouratherTests' do
     inherit! :search_paths
