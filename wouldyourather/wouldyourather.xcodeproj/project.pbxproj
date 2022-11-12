@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		468795A1CFB3590FC89F0DCF /* Pods_wouldyourather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500C8944CDA0FD575FA9FD73 /* Pods_wouldyourather.framework */; };
 		60A6EAAA60FC42A7D72A41EC /* Pods_wouldyouratherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899E627BD318852D0F5E23A0 /* Pods_wouldyouratherTests.framework */; };
+		6A3B081B291F525C008A7B68 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3B081A291F525C008A7B68 /* SignInViewController.swift */; };
+		6A3B081D291F52F1008A7B68 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3B081C291F52F1008A7B68 /* SignUpViewController.swift */; };
 		6AF3535429046B25009CA0C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3535329046B25009CA0C9 /* AppDelegate.swift */; };
 		6AF3535629046B25009CA0C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3535529046B25009CA0C9 /* SceneDelegate.swift */; };
 		6AF3535829046B25009CA0C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3535729046B25009CA0C9 /* ViewController.swift */; };
@@ -51,6 +53,8 @@
 		459E93246F91B62E4EDD19C6 /* Pods-wouldyouratherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wouldyouratherTests.release.xcconfig"; path = "Target Support Files/Pods-wouldyouratherTests/Pods-wouldyouratherTests.release.xcconfig"; sourceTree = "<group>"; };
 		500C8944CDA0FD575FA9FD73 /* Pods_wouldyourather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wouldyourather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53C4E966F91A390C783F4A49 /* Pods-wouldyourather-wouldyouratherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wouldyourather-wouldyouratherUITests.release.xcconfig"; path = "Target Support Files/Pods-wouldyourather-wouldyouratherUITests/Pods-wouldyourather-wouldyouratherUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6A3B081A291F525C008A7B68 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		6A3B081C291F52F1008A7B68 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6AF3535029046B25009CA0C9 /* wouldyourather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wouldyourather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF3535329046B25009CA0C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AF3535529046B25009CA0C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 				6AF3535E29046B26009CA0C9 /* LaunchScreen.storyboard */,
 				6AF3536129046B26009CA0C9 /* Info.plist */,
 				6AF35383290CE2C9009CA0C9 /* LoginViewController.swift */,
+				6A3B081A291F525C008A7B68 /* SignInViewController.swift */,
+				6A3B081C291F52F1008A7B68 /* SignUpViewController.swift */,
 				CACCB876290C89F9004C896C /* PostViewController.swift */,
 				6C011B56290B64CF00C4331F /* HomeFeedViewController.swift */,
 				6C011B58290B650900C4331F /* QuestionTableViewCell.swift */,
@@ -428,9 +434,11 @@
 				6AF35384290CE2C9009CA0C9 /* LoginViewController.swift in Sources */,
 				6AF3535829046B25009CA0C9 /* ViewController.swift in Sources */,
 				6C011B59290B650900C4331F /* QuestionTableViewCell.swift in Sources */,
+				6A3B081B291F525C008A7B68 /* SignInViewController.swift in Sources */,
 				6CE2E03B291A4018007F7C26 /* CommentTableViewCell.swift in Sources */,
 				6CE2E039291A3F93007F7C26 /* CommentsViewController.swift in Sources */,
 				6AF3535429046B25009CA0C9 /* AppDelegate.swift in Sources */,
+				6A3B081D291F52F1008A7B68 /* SignUpViewController.swift in Sources */,
 				6AF3535629046B25009CA0C9 /* SceneDelegate.swift in Sources */,
 				6C011B57290B64CF00C4331F /* HomeFeedViewController.swift in Sources */,
 			);
