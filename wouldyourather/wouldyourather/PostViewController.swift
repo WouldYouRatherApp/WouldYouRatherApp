@@ -27,7 +27,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func onSubmitButton(_ sender: Any) {
-        let post = PFObject(className: "Posts")
+        let post = PFObject(className: "Question")
         
         post["choiceA"] = choiceAField.text
         post["choiceB"] = choiceBField.text
