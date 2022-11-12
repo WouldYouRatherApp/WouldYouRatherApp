@@ -17,8 +17,22 @@ class QuestionTableViewCell: UITableViewCell {
     @IBOutlet weak var option2Label: UILabel!
     
     @IBOutlet weak var commentButton: UIButton!
-    @IBOutlet weak var heartButton: UIButton!
+    @IBOutlet weak var upvoteButton: UIButton!
+
+    @IBOutlet weak var percentagesLabel: UILabel!
+
+    @IBAction func upvoteQuestion(_ sender: Any) {
+    }
     
+    var upvoted:Bool = false
+    func setUpvote(_ isUpvoted:Bool) {
+        upvoted = isUpvoted
+        if (upvoted) {
+            upvoteButton.setImage(UIImage(named:"heart_empty"), for:UIControl.State.normal)
+        } else {
+            upvoteButton.setImage(UIImage(named:"heart_filled"), for:UIControl.State.normal)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
