@@ -13,7 +13,7 @@ Users can create would you rather questions. Others can vote on the question and
 
 ### Current Progress
 
-<img src='https://imgur.com/Wl4yvZJ.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/LO4BRiB.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### App Evaluation
 - **Category:** Social Media App
