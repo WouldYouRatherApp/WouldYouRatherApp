@@ -38,16 +38,15 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             if questions != nil {
                 self.questions = questions!
                 self.questionTableView.reloadData()
-                print("questions exist")
+//                print("questions exist")
             } else {
-                print("no questions")
+//                print("no questions")
             }
         }
         self.myRefreshControl.endRefreshing()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(questions.count)
         return questions.count
     }
     
@@ -145,8 +144,6 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
 //        print(user.objectId)
 //        print(questionVotedUsers)
 //        print(questionVotedUsers.contains(currentUser))
-        print("percentage text:")
-        print(cell.percentagesLabel.text)
         var userVoted:Bool = false
         for person in questionVotedUsers {
             if (userObjectId == person.objectId) {
@@ -156,8 +153,8 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // current bug: trying to make sure users can't vote more than once
         if userVoted == true {
-            print("USER IS HAS ALREADY VOTED FOR THIS QUESTION")
-            print(indexPath.row)
+//            print("USER IS HAS ALREADY VOTED FOR THIS QUESTION")
+//            print(indexPath.row)
             cell.option1Label.isUserInteractionEnabled = false
             cell.option2Label.isUserInteractionEnabled = false
             
@@ -169,7 +166,7 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
 
             cell.percentagesLabel.text = String(percA) + "% - " + String (percB) + "%"
         } else {
-            print("USER HASNT VOTED FOR THIS QUESTION")
+//            print("USER HASNT VOTED FOR THIS QUESTION")
             cell.option1Label.isUserInteractionEnabled = true
             cell.option2Label.isUserInteractionEnabled = true
             cell.percentagesLabel.text = ""
@@ -181,7 +178,24 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let cellOption2Tapped = UITapGestureRecognizer(target: self, action:     #selector(option2Tapped))
         cell.option2Label.addGestureRecognizer(cellOption2Tapped) //gesture added
-        self.myRefreshControl.endRefreshing()
+        self.myRefreshControl.endRefreshing()        
+        
+        let questionUpvotedUsers = (question["upvotedUsers"] as? [PFObject]) ?? []
+        var hereUpvoted:Bool = false
+        for person in questionUpvotedUsers {
+            if (userObjectId == person.objectId) {
+                    hereUpvoted = true
+                    cell.upvoted = true
+            }
+        }
+        if hereUpvoted == true {
+            cell.setUpvote(true)
+        } else {
+            cell.setUpvote(false)
+        }
+        cell.selectedQuestion = question
+        cell.currentUser = currentUser
+        
         return cell
     }
 
@@ -193,13 +207,13 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         // Pass the selected object to the new view controller.
         
         // find selected question
-        print("loading comments")
         let view = sender as? UIView
         let position = view?.convert(CGPoint.zero, to: self.questionTableView)
         let path = questionTableView.indexPathForRow(at: position!) as? IndexPath
         
         if (path != nil) {
             let question = questions[path!.row]
+            question.fetchIfNeededInBackground()
             let comments = (question["comments"] as? [PFObject]) ?? []
             
             // pass question id to CommentsViewController
