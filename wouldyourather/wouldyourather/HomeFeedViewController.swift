@@ -33,7 +33,7 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
 
         let query = PFQuery(className: "Question")
         query.includeKeys(["author", "comments", "comments.author"])
-        query.limit = 20
+        query.limit = 30
         query.findObjectsInBackground { (questions, error) in
             if questions != nil {
                 self.questions = questions!
