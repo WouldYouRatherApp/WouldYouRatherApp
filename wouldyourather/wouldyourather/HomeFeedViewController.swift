@@ -212,7 +212,7 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         let path = questionTableView.indexPathForRow(at: position!) as? IndexPath
         
         if (path != nil) {
-            let question = questions[path!.row]
+            let question = questions.reversed()[path!.row]
             question.fetchIfNeededInBackground()
             let comments = (question["comments"] as? [PFObject]) ?? []
             

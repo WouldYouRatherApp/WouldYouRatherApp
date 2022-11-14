@@ -204,14 +204,29 @@ class TrendingFeedViewController: UIViewController, UITableViewDelegate, UITable
             return cell
         }
 
-        /*
         // MARK: - Navigation
 
         // In a storyboard-based application, you will often want to do a little preparation before navigation
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            // Get the new view controller using segue.destination.
-            // Pass the selected object to the new view controller.
-        }
-        */
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+             // Get the new view controller using segue.destination.
+             // Pass the selected object to the new view controller.
+             
+             // find selected question
+             let view = sender as? UIView
+             let position = view?.convert(CGPoint.zero, to: self.trendingQuestionsTableView)
+             let path = trendingQuestionsTableView.indexPathForRow(at: position!) as? IndexPath
+             
+             if (path != nil) {
+                 let question = questions.reversed()[path!.row]
+                 question.fetchIfNeededInBackground()
+                 let comments = (question["comments"] as? [PFObject]) ?? []
+                 
+                 // pass question id to CommentsViewController
+                 let commentsViewController = segue.destination as! CommentsViewController
+                 commentsViewController.selectedQuestion = question
+                 commentsViewController.comments = comments
+             }
+
+         }
 
 }
