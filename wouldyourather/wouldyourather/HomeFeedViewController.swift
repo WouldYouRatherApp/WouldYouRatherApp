@@ -15,18 +15,22 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     var questions = [PFObject]()
     var selectedQuestion: PFObject!
     
+    let myRefreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         questionTableView.dataSource = self
         questionTableView.delegate = self
 
         super.viewDidLoad()
+        myRefreshControl.addTarget(self, action: #selector(viewDidAppear), for: .valueChanged)
+        questionTableView.refreshControl = myRefreshControl
 
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         let query = PFQuery(className: "Question")
         query.includeKeys(["author", "comments", "comments.author"])
         query.limit = 20
@@ -39,6 +43,7 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
                 print("no questions")
             }
         }
+        self.myRefreshControl.endRefreshing()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,7 +51,6 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         return questions.count
     }
     
-
     
     @objc func option1Tapped(tapGestureRecognizer: UITapGestureRecognizer){
         let touch = tapGestureRecognizer.location(in: questionTableView)
@@ -54,17 +58,28 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = questionTableView.cellForRow(at: indexPath!) as? QuestionTableViewCell
         let question = questions[indexPath!.row]
 
-        question.incrementKey("votesA")
-        
         let user = PFUser.current()!
-        question.add(user, forKey: "votedUsers")
+        let votedUsersArr = (question["votedUsers"] as? [PFObject]) ?? []
         
-        question.saveInBackground {(success, error) in
-            if (success){
-                print("vote saved")
-            } else {
-                print("error saving vote")
+//        print("question's votedUsers")
+//        print(votedUsersArr)
+//        print("user array?")
+//        print(user)
+//        print(votedUsersArr.contains(user))
+
+        if (!votedUsersArr.contains(user)) {
+            question.incrementKey("votesA")
+            question.add(user, forKey: "votedUsers")
+            
+            question.saveInBackground {(success, error) in
+                if (success){
+                    print("vote saved")
+                } else {
+                    print("error saving vote")
+                }
             }
+        } else {
+            print("user has already voted")
         }
         
         let votesA = question["votesA"] as? Double
@@ -73,7 +88,7 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         let percA = Int(floor((votesA! / totalVotes) * 100))
         let percB = Int(floor((votesB! / totalVotes) * 100))
         
-        cell!.percentagesLabel.text = String(percA) + "%-" + String (percB) + "%"
+        cell!.percentagesLabel.text = String(percA) + "% - " + String (percB) + "%"
     }
 
     @objc func option2Tapped(tapGestureRecognizer: UITapGestureRecognizer){
@@ -82,17 +97,22 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = questionTableView.cellForRow(at: indexPath!) as? QuestionTableViewCell
         let question = questions[indexPath!.row]
 
-        question.incrementKey("votesB")
-        
         let user = PFUser.current()!
-        question.add(user, forKey: "votedUsers")
-        
-        question.saveInBackground {(success, error) in
-            if (success){
-                print("vote saved")
-            } else {
-                print("error saving vote")
+        let votedUsersArr = (question["votedUsers"] as? [PFObject]) ?? []
+
+        if (!votedUsersArr.contains(user)) {
+            question.incrementKey("votesB")
+            question.add(user, forKey: "votedUsers")
+            
+            question.saveInBackground {(success, error) in
+                if (success){
+                    print("vote saved")
+                } else {
+                    print("error saving vote")
+                }
             }
+        }  else {
+            print("user has already voted")
         }
         
         let votesA = question["votesA"] as? Double
@@ -107,30 +127,52 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = questionTableView.dequeueReusableCell(withIdentifier: "QuestionTableViewCell") as! QuestionTableViewCell
-//        let cell = QuestionTableViewCell()
-        let question = questions[indexPath.row]
+        let question = questions.reversed()[indexPath.row]
         
         let user = question["author"] as! PFUser
-//        let upvotedQuestions = user["upvotedQuestions"] as! [String]
+
         cell.usernameLabel.text = user["username"] as? String
         cell.fullNameLabel.text = user["fullName"] as? String
 
         cell.option1Label.text = question["choiceA"] as? String
         cell.option2Label.text = question["choiceB"] as? String
 
-        // print(cell.option1Label)
         let currentUser = PFUser.current()!
         let questionVotedUsers = (question["votedUsers"] as? [PFObject]) ?? []
-//        print(questionVotedUsers)
+        let userObjectId = currentUser.objectId
+        
 //        print(currentUser)
+//        print(user.objectId)
+//        print(questionVotedUsers)
+//        print(questionVotedUsers.contains(currentUser))
+        print("percentage text:")
+        print(cell.percentagesLabel.text)
+        var userVoted:Bool = false
+        for person in questionVotedUsers {
+            if (userObjectId == person.objectId) {
+                userVoted = true
+            }
+        }
         
         // current bug: trying to make sure users can't vote more than once
-        if questionVotedUsers.contains(currentUser) {
+        if userVoted == true {
+            print("USER IS HAS ALREADY VOTED FOR THIS QUESTION")
+            print(indexPath.row)
             cell.option1Label.isUserInteractionEnabled = false
             cell.option2Label.isUserInteractionEnabled = false
+            
+            let votesA = question["votesA"] as? Double
+            let votesB = question["votesB"] as? Double
+            let totalVotes = votesA! + votesB!
+            let percA = Int(floor((votesA! / totalVotes) * 100))
+            let percB = Int(floor((votesB! / totalVotes) * 100))
+
+            cell.percentagesLabel.text = String(percA) + "% - " + String (percB) + "%"
         } else {
+            print("USER HASNT VOTED FOR THIS QUESTION")
             cell.option1Label.isUserInteractionEnabled = true
             cell.option2Label.isUserInteractionEnabled = true
+            cell.percentagesLabel.text = ""
         }
         
         //Adding tap gesture
@@ -139,22 +181,7 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let cellOption2Tapped = UITapGestureRecognizer(target: self, action:     #selector(option2Tapped))
         cell.option2Label.addGestureRecognizer(cellOption2Tapped) //gesture added
-
-
-        //Method called on touch of nameLabel
-
-        
-//        if (upvotedQuestions.contains(question)) {
-//            cell.setUpvote(true)
-//        }
-//        else {
-//            cell.setUpvote(false)
-//        }
-//        cell.fullNameLabel.text = "Jane Doe"
-//        cell.usernameLabel.text = "@JaneDoe"
-//        cell.option1Label.text = "have telekinesis"
-//        cell.option2Label.text = "have telepathy"
-        
+        self.myRefreshControl.endRefreshing()
         return cell
     }
 
