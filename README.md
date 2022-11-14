@@ -55,7 +55,7 @@ Users can create would you rather questions. Others can vote on the question and
    * Feed/Posts that are uploaded the most recently (chronological order)
    * can display posts from followed users
 * Trending Feed Screen
-   * User sees questions with the most popular questions (dictated by # of votes)
+   * User sees questions with the most popular questions (dictated by # of upvotes)
 * Poll Creation Screen
     * User can create and the post a poll
 * User Profiles
