@@ -35,7 +35,7 @@ class TrendingFeedViewController: UIViewController, UITableViewDelegate, UITable
             let query = PFQuery(className: "Question")
             query.includeKeys(["author", "comments", "comments.author", "upvotes"])
             query.order(byAscending: "upvotes")
-            query.limit = 20
+            query.limit = 35
             query.findObjectsInBackground { (questions, error) in
                 if questions != nil {
                     self.questions = questions!
