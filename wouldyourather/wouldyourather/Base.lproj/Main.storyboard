@@ -573,21 +573,23 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tf0-vY-aLM">
-                                <rect key="frame" x="324.66666666666669" y="43" width="45.333333333333314" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="user"/>
-                                <connections>
-                                    <segue destination="Drt-xK-zJt" kind="presentation" modalPresentationStyle="fullScreen" id="a3d-Ze-MSz"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGF-xl-g3Q">
+                                <rect key="frame" x="0.0" y="40" width="390" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title=" " id="OEf-4z-7qv">
+                                        <barButtonItem key="rightBarButtonItem" image="user" id="jP7-DB-6FF">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <segue destination="Drt-xK-zJt" kind="presentation" id="1fW-E3-DVF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Rs-wy-S52"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="tf0-vY-aLM" firstAttribute="top" secondItem="FHd-jY-h2e" secondAttribute="top" constant="43" id="PNK-Pl-6iM"/>
-                            <constraint firstItem="7Rs-wy-S52" firstAttribute="trailing" secondItem="tf0-vY-aLM" secondAttribute="trailing" constant="20" id="YcT-pn-Gr1"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main Feed" image="home_empty" selectedImage="home_empty" id="u5v-dI-6ok"/>
                     <connections>
@@ -647,14 +649,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddCommentCell" id="tM9-zF-doQ">
-                                        <rect key="frame" x="0.0" y="129" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="129" width="390" height="43.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tM9-zF-doQ" id="62f-bh-WRD">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a comment..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbr-s6-agX">
-                                                    <rect key="frame" x="20" y="11" width="350" height="21"/>
+                                                    <rect key="frame" x="20" y="11.000000000000002" width="350" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -685,7 +687,7 @@
         <!--Post View Controller-->
         <scene sceneID="a0d-6c-LhT">
             <objects>
-                <viewController storyboardIdentifier="PostViewController" id="Drt-xK-zJt" customClass="PostViewController" customModule="wouldyourather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostViewController" modalPresentationStyle="fullScreen" id="Drt-xK-zJt" customClass="PostViewController" customModule="wouldyourather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Roy-Ar-rX9">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -896,7 +898,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="VGS-wJ-Xms"/>
-        <segue reference="9Zx-8w-4Ks"/>
+        <segue reference="x6f-OT-6ev"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="balance" width="170.66667175292969" height="170.66667175292969"/>
