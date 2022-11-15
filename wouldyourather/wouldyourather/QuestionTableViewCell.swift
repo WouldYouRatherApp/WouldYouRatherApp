@@ -14,9 +14,6 @@ class QuestionTableViewCell: UITableViewCell {
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     
-    @IBOutlet weak var photo1Image: UIImageView!
-    @IBOutlet weak var photo2Image: UIImageView!
-    
     @IBOutlet weak var option1Label: UILabel!
     @IBOutlet weak var option2Label: UILabel!
     

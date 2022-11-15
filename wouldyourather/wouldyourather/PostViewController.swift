@@ -56,7 +56,11 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         picker.delegate = self
         picker.allowsEditing = true
         
-        picker.sourceType = .photoLibrary
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            picker.sourceType = .camera
+        } else {
+            picker.sourceType = .photoLibrary
+        }
         
         present(picker, animated: true, completion: nil)
     }
@@ -66,7 +70,11 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         picker.delegate = self
         picker.allowsEditing = true
         
-        picker.sourceType = .photoLibrary
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            picker.sourceType = .camera
+        } else {
+            picker.sourceType = .photoLibrary
+        }
         
         present(picker, animated: true, completion: nil)
     }
