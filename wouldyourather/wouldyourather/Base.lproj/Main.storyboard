@@ -399,6 +399,8 @@
                                             <outlet property="option2Label" destination="YQO-ll-xtp" id="zCn-bD-Jtp"/>
                                             <outlet property="percentagesLabel" destination="eeC-81-1on" id="kPa-76-tKJ"/>
                                             <outlet property="pfp" destination="dph-oO-OcP" id="Ix6-3I-EBU"/>
+                                            <outlet property="photo1Image" destination="10Q-pA-khe" id="iEB-hb-O6F"/>
+                                            <outlet property="photo2Image" destination="iYf-Dg-BrQ" id="kFr-yb-vvB"/>
                                             <outlet property="upvoteButton" destination="BLb-BF-U8J" id="kRJ-bo-T1z"/>
                                             <outlet property="usernameLabel" destination="MEk-Bv-e8K" id="BYf-l3-Z1v"/>
                                         </connections>
