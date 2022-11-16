@@ -22,9 +22,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
         sumbitButton.layer.cornerRadius = 15
         
-//        uploadProfilePic.layer.masksToBounds = true
-//        uploadProfilePic.layer.cornerRadius = uploadProfilePic.bounds.width / 2
-      
+        //        uploadProfilePic.layer.masksToBounds = true
+        //        uploadProfilePic.layer.cornerRadius = uploadProfilePic.bounds.width / 2
+        
         uploadProfilePic.layer.cornerRadius = uploadProfilePic.frame.size.width / 2
         uploadProfilePic.clipsToBounds = true
         
@@ -35,7 +35,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     
     @IBAction func onUploadProfilePicBtn(_ sender: Any) {
-       
+        
         
         let picker = UIImagePickerController()
         picker.delegate = self // when pic is taken, calls back
@@ -81,18 +81,55 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
      */
     
     @IBAction func onSubmitBtn(_ sender: Any) {
-        
-       
-        
         let query = PFQuery(className: "User")
-        var prefObj = PFObject(className: "User")
+//        var prefObj = PFObject(className: "User")
         let imageData = uploadProfilePic.image!.pngData()
         let picFile = PFFileObject(name: "image.png", data: imageData!)
         let newBio = self.captionBio.text!
-        let newFullName = self.captionFullName.text!
-//        let currUserName = PFUser.current()?.username
+//        var newFullName = self.captionFullName.text!
+        //        let currUserName = PFUser.current()?.username
         let currObjectId = (PFUser.current()?.objectId)!
         print(currObjectId)
+        
+        query.getObjectInBackground(withId: "cXo2Ys6KzF") { (object: PFObject?, error: Error?) in
+            if let error = error {
+                  print(error.localizedDescription)
+              }
+            else if let object = object {
+                print("RUNNING In the else if")
+                print(currObjectId)
+                object["bio"] = self.captionBio.text
+                object["fullName"] = self.captionFullName.text
+                object.saveInBackground()
+                }
+            print("DONE RUNNING the else if")
+        }
+    }
+}
+
+        
+//        if let currUserName = PFUser.current()?.username {
+//            query.whereKey("username", equalTo: currUserName)
+//        }
+//
+//        query.getObjectInBackground(withId: currObjectId){
+//            (object, error) ->
+//            Void in
+//            if object == nil {
+//                print(currObjectId)
+//                print("Passes the empty object check")
+//                object?["bio"] = self.captionBio.text
+//                object?["fullName"] = self.captionFullName.text
+//                object?.saveInBackground()
+//            }
+//            print("DIDNT the empty object check")
+//        }
+        
+//        if let currUserName = PFUser.current()?.username {
+//            query.whereKey("username", equalTo: currUserName)
+//        }
+      
+      
         
 //        if let currUserName = PFUser.current()?.username {
 //                    query.whereKey("username", equalTo: currUserName)
@@ -107,8 +144,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //
 //
 //                        print("OHHH CHIZZZLLLESS")
-//                        object["bio"] = "Hello"
-//                        object["fullName"] = "newFullName"
+//                        object["bio"] = self.captionBio.text!
+//                        object["fullName"] = captionFullName
 //                        //                    objects["profilePicture"] = picFile
 //                        print("Update successful")
 //                        object.saveInBackground()
@@ -120,20 +157,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
         
         
-        //        if let currUserName = PFUser.current()?.username {
-        //            prefQuery.whereKey("username", equalTo: currUserName)
-        //        }
-        //
-        //        query.getObjectInBackground(withId: currObjectId){
-        //            (object, error) ->
-        //            Void in
-        //            if object != nil {
-        //                print(object!["username"]as! String)
-        //                object!["bio"] = self.captionBio.text!
-        //                object!["fullName"] = self.captionFullName.text!
-        //                object!.saveInBackground()
-        //            }
-        //        }
+              
 //        query.getObjectInBackground(withId:"DhHKanjiUW") {
 //            (object, error) -> Void in
 //            if error == nil {
@@ -159,7 +183,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         
         
-    }
+    
                
         
         
@@ -188,6 +212,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //            }
 //        }
     
-}
+
   
 
