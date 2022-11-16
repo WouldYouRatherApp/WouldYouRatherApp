@@ -1,79 +1,139 @@
 //
-//  HomeFeedViewController.swift
+//  ProfileFeedViewController.swift
 //  wouldyourather
 //
-//  Created by Heather Nguyen on 10/27/22.
+//  Created by Francisco Lira on 11/14/22.
 //
 
 import UIKit
 import Parse
 
-class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ProfileFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
-    @IBOutlet weak var questionTableView: UITableView!
+    @IBOutlet weak var userImage: UIImageView!
+    
+    @IBOutlet weak var profileUsername: UILabel!
+    
+    
+    @IBOutlet weak var profileBio: UILabel!
+    
+    
+    @IBOutlet weak var userProfileInfo: UIView!
     
     var questions = [PFObject]()
-    var profiles = [PFObject]()
     var selectedQuestion: PFObject!
-    let cellSpacingHeight: CGFloat = 10
     
     
-    
+    var posts = [PFObject]()
+    var selectedPost: PFObject!
     let myRefreshControl = UIRefreshControl()
+
     
+    @IBAction func onLogoutButton(_ sender: Any) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        let delegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+        delegate.window?.rootViewController = loginViewController
+        PFUser.logOut()
+        
+    }
+    
+    
+    @IBOutlet weak var profileQuestionTableView: UITableView!
+    
+    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+    
+
     override func viewDidLoad() {
-        questionTableView.dataSource = self
-        questionTableView.delegate = self
+        profileQuestionTableView.dataSource = self
+        profileQuestionTableView.delegate = self
+        
+        
 
         super.viewDidLoad()
         myRefreshControl.addTarget(self, action: #selector(viewDidAppear), for: .valueChanged)
-        questionTableView.refreshControl = myRefreshControl
+        profileQuestionTableView.refreshControl = myRefreshControl
         
+        userImage.layer.masksToBounds = true
+        userImage.layer.cornerRadius = userImage.bounds.width / 2
         
+        let currUserName = PFUser.current()?.username
+        let currObjectId = (PFUser.current()?.objectId)!
+        let currentUser = PFUser.current()! // currentUser is now assigned to the object containing the info about the current user
+        
+        let query = PFQuery(className: "User")
+        self.profileUsername.text = PFUser.current()?.username
+        self.profileBio.text = currentUser["bio"] as! String
+//        self.profileBio.text = PFUser.current()?.object["bio"];
+        
+        query.getObjectInBackground(withId: currObjectId){(object, error) -> Void in
+            
+            if object != nil && error == nil{
+                print(object!["fullName"] as! String)
+                print("YUUSSSSSS")
+            }
+            else{
+                print("NAURRRR")
+                print(object)
+                print(error)
+            }
+        }
+//        userImage = currentUser["profilePicture"] as! UIImageView
+        
+        let imageFile = currentUser["profilePicture"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
+                    
+        userImage.af.setImage(withURL: url)
+        
+        super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        let currentUser = PFUser.current()!
+        let currObjectId = (PFUser.current()?.objectId)!
+        let currentAuthor = currObjectId
+        print("PRINTING CURRENT AUTHOR: " + currentAuthor)
+        // to check if there is an author populated in the console
+//        let predicate = NSPredicate(format:"author == \(currentAuthor)")
+//
+//        let query = PFQuery(className: "Questions", predicate: predicate)
         let query = PFQuery(className: "Question")
-        query.includeKeys(["author", "comments", "comments.author"])
+        query.whereKey("author", equalTo: currentAuthor)
+        query.includeKeys(["author", "comments", "comments.author", "upvotes"])
         query.limit = 35
         query.findObjectsInBackground { (questions, error) in
             if questions != nil {
                 self.questions = questions!
-                self.questionTableView.reloadData()
-//                print("questions exist")
+                self.profileQuestionTableView.reloadData()
+                print(questions!)
+                print("questions exist")
             } else {
-//                print("no questions")
-            }
-        }
-        self.myRefreshControl.endRefreshing()
-        let query2 = PFQuery(className: "User")
-        query2.includeKeys(["username", "profilePicture"])
-        query2.limit = 50
-        query2.findObjectsInBackground { (profiles, error) in
-            if profiles != nil {
-                self.profiles = profiles!
-                self.questionTableView.reloadData()
-//                print("questions exist")
-            } else {
-//                print("no questions")
+                print("no questions")
             }
         }
         self.myRefreshControl.endRefreshing()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(questions.count)
         return questions.count
     }
     
-    
     @objc func option1Tapped(tapGestureRecognizer: UITapGestureRecognizer){
-        let touch = tapGestureRecognizer.location(in: questionTableView)
-        let indexPath = questionTableView.indexPathForRow(at: touch)
-        let cell = questionTableView.cellForRow(at: indexPath!) as? QuestionTableViewCell
+        let touch = tapGestureRecognizer.location(in: profileQuestionTableView)
+        let indexPath = profileQuestionTableView.indexPathForRow(at: touch)
+        let cell = profileQuestionTableView.cellForRow(at: indexPath!) as? QuestionTableViewCell
         let question = questions[indexPath!.row]
 
         let user = PFUser.current()!
@@ -108,11 +168,11 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         
         cell!.percentagesLabel.text = String(percA) + "% - " + String (percB) + "%"
     }
-
+    
     @objc func option2Tapped(tapGestureRecognizer: UITapGestureRecognizer){
-        let touch = tapGestureRecognizer.location(in: questionTableView)
-        let indexPath = questionTableView.indexPathForRow(at: touch)
-        let cell = questionTableView.cellForRow(at: indexPath!) as? QuestionTableViewCell
+        let touch = tapGestureRecognizer.location(in: profileQuestionTableView)
+        let indexPath = profileQuestionTableView.indexPathForRow(at: touch)
+        let cell = profileQuestionTableView.cellForRow(at: indexPath!) as? QuestionTableViewCell
         let question = questions[indexPath!.row]
 
         let user = PFUser.current()!
@@ -141,24 +201,13 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
 
         cell!.percentagesLabel.text = String(percA) + "% - " + String (percB) + "%"
     }
-
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = questionTableView.dequeueReusableCell(withIdentifier: "QuestionTableViewCell") as! QuestionTableViewCell
+        let cell = profileQuestionTableView.dequeueReusableCell(withIdentifier: "QuestionTableViewCell") as! QuestionTableViewCell
         let question = questions.reversed()[indexPath.row]
-//        let profile = profiles[indexPath.row]
         
         let user = question["author"] as! PFUser
-        
-        cell.pfp.layer.masksToBounds = true
-        cell.pfp.layer.cornerRadius = cell.pfp.bounds.width / 2
-        
-//        let imageFile = profile["profilePicture"] as! PFFileObject
-//        let urlString = imageFile.url!
-//        let url = URL(string: urlString)!
-//                    
-//        cell.pfp.af.setImage(withURL: url)
-        
+
         cell.usernameLabel.text = user["username"] as? String
         cell.fullNameLabel.text = user["fullName"] as? String
 
@@ -173,6 +222,8 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
 //        print(user.objectId)
 //        print(questionVotedUsers)
 //        print(questionVotedUsers.contains(currentUser))
+        print("percentage text:")
+        print(cell.percentagesLabel.text)
         var userVoted:Bool = false
         for person in questionVotedUsers {
             if (userObjectId == person.objectId) {
@@ -182,8 +233,8 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // current bug: trying to make sure users can't vote more than once
         if userVoted == true {
-//            print("USER IS HAS ALREADY VOTED FOR THIS QUESTION")
-//            print(indexPath.row)
+            print("USER IS HAS ALREADY VOTED FOR THIS QUESTION")
+            print(indexPath.row)
             cell.option1Label.isUserInteractionEnabled = false
             cell.option2Label.isUserInteractionEnabled = false
             
@@ -195,7 +246,7 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
 
             cell.percentagesLabel.text = String(percA) + "% - " + String (percB) + "%"
         } else {
-//            print("USER HASNT VOTED FOR THIS QUESTION")
+            print("USER HASNT VOTED FOR THIS QUESTION")
             cell.option1Label.isUserInteractionEnabled = true
             cell.option2Label.isUserInteractionEnabled = true
             cell.percentagesLabel.text = ""
@@ -207,7 +258,7 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let cellOption2Tapped = UITapGestureRecognizer(target: self, action:     #selector(option2Tapped))
         cell.option2Label.addGestureRecognizer(cellOption2Tapped) //gesture added
-        self.myRefreshControl.endRefreshing()        
+        self.myRefreshControl.endRefreshing()
         
         let questionUpvotedUsers = (question["upvotedUsers"] as? [PFObject]) ?? []
         var hereUpvoted:Bool = false
@@ -225,44 +276,21 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.selectedQuestion = question
         cell.currentUser = currentUser
         
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
-        cell.clipsToBounds = true
-        cell.backgroundColor = UIColor.white
-        cell.layer.borderColor = UIColor.black.cgColor
-        
-        
-        
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return cellSpacingHeight
-        }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-           let headerView = UIView()
-           headerView.backgroundColor = UIColor.clear
-           return headerView
-       }
-    
-
-    // set distance between each table cell
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
         // find selected question
+        print("loading comments")
         let view = sender as? UIView
-        let position = view?.convert(CGPoint.zero, to: self.questionTableView)
-        let path = questionTableView.indexPathForRow(at: position!) as? IndexPath
+        let position = view?.convert(CGPoint.zero, to: self.profileQuestionTableView)
+        let path = profileQuestionTableView.indexPathForRow(at: position!) as? IndexPath
         
         if (path != nil) {
-            let question = questions.reversed()[path!.row]
-            question.fetchIfNeededInBackground()
+            let question = questions[path!.row]
             let comments = (question["comments"] as? [PFObject]) ?? []
             
             // pass question id to CommentsViewController
@@ -272,5 +300,17 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         }
 
     }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
+
