@@ -73,7 +73,15 @@ class ProfileFeedViewController: UIViewController, UITableViewDataSource, UITabl
         
         let query = PFQuery(className: "User")
         self.profileUsername.text = PFUser.current()?.username
-        self.profileBio.text = currentUser["bio"] as! String
+        
+        let bio = currentUser["bio"] as? String
+        if bio != nil {
+            self.profileBio.text = currentUser["bio"] as! String
+        }
+        else{
+            self.profileBio.text = "You currently do not have a bio..."
+        }
+        
 //        self.profileBio.text = PFUser.current()?.object["bio"];
         
         query.getObjectInBackground(withId: currObjectId){(object, error) -> Void in
@@ -91,10 +99,13 @@ class ProfileFeedViewController: UIViewController, UITableViewDataSource, UITabl
 //        userImage = currentUser["profilePicture"] as! UIImageView
         
         let imageFile = currentUser["profilePicture"] as! PFFileObject
-        let urlString = imageFile.url!
-        let url = URL(string: urlString)!
-                    
-        userImage.af.setImage(withURL: url)
+        
+        if imageFile != nil{
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
+            userImage.af.setImage(withURL: url)
+        }
+       
         
         super.viewDidLoad()
 
