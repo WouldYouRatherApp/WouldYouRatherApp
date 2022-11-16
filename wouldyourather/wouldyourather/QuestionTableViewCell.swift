@@ -22,6 +22,9 @@ class QuestionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var percentagesLabel: UILabel!
     
+    @IBOutlet weak var photo1Image: UIImageView!
+    @IBOutlet weak var photo2Image: UIImageView!
+
     var upvoted:Bool = false
     var selectedQuestion: PFObject!
     var currentUser: PFUser!
