@@ -23,9 +23,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
         sumbitButton.layer.cornerRadius = 15
         
-//        uploadProfilePic.layer.masksToBounds = true
-//        uploadProfilePic.layer.cornerRadius = uploadProfilePic.bounds.width / 2
-      
+        //        uploadProfilePic.layer.masksToBounds = true
+        //        uploadProfilePic.layer.cornerRadius = uploadProfilePic.bounds.width / 2
+        
         uploadProfilePic.layer.cornerRadius = uploadProfilePic.frame.size.width / 2
         uploadProfilePic.clipsToBounds = true
         
@@ -36,7 +36,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     
     @IBAction func onUploadProfilePicBtn(_ sender: Any) {
-       
+        
         
         let picker = UIImagePickerController()
         picker.delegate = self // when pic is taken, calls back
@@ -83,19 +83,19 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func onSubmitBtn(_ sender: Any) {
         
-       
+        
         
         let post = PFObject(className: "User")
-//        var prefObj = PFObject(className: "User")
+        //        var prefObj = PFObject(className: "User")
         let imageData = uploadProfilePic.image!.pngData()
         let picFile = PFFileObject(name: "image.png", data: imageData!)
-//        let newBio = self.captionBio.text!
-//        let newFullName = self.captionFullName.text!
-//        let currUserName = PFUser.current()?.username
+        //        let newBio = self.captionBio.text!
+        //        let newFullName = self.captionFullName.text!
+        //        let currUserName = PFUser.current()?.username
         let currObjectId = (PFUser.current()?.objectId)!
         
         let currentUser = PFUser.current()
-       
+        
         currentUser?["fullName"] = self.captionFullName.text
         currentUser?["bio"] = self.captionBio.text
         currentUser?["profilePicture"] = picFile
@@ -107,116 +107,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 print("error!")
             }
         }
-        
-      
-//        currentUser.getObjectInBackground(withId: currObjectId) { (object: PFObject?, error: Error?) in
-//            if let error = error {
-//                print(error.localizedDescription)
-//            } else if let object = object {
-//                object["fullName"] =  self.captionFullName.text
-//                object["bio"] = self.captionBio.text
-//                object["profilePicture"] = picFile
-//                object.saveInBackground()
-//            }
-//        }
-       
-        
         print(currObjectId)
         
-//        if let currUserName = PFUser.current()?.username {
-//                    query.whereKey("username", equalTo: currUserName)
-//                }
-//        query.findObjectsInBackground{
-//            (object, error) in
-//            if error == nil {
-//                print("HELLLLOOOO")
-//                if let object = object {
-//                    print("OHHH NAUR")
-//
-//
-//
-//                        print("OHHH CHIZZZLLLESS")
-//                        object["bio"] = "Hello"
-//                        object["fullName"] = "newFullName"
-//                        //                    objects["profilePicture"] = picFile
-//                        print("Update successful")
-//                        object.saveInBackground()
-//
-//
-//                      }
-//                  }
-//        }
-
-        
-        
-        //        if let currUserName = PFUser.current()?.username {
-        //            prefQuery.whereKey("username", equalTo: currUserName)
-        //        }
-        //
-        //        query.getObjectInBackground(withId: currObjectId){
-        //            (object, error) ->
-        //            Void in
-        //            if object != nil {
-        //                print(object!["username"]as! String)
-        //                object!["bio"] = self.captionBio.text!
-        //                object!["fullName"] = self.captionFullName.text!
-        //                object!.saveInBackground()
-        //            }
-        //        }
-//        query.getObjectInBackground(withId:"DhHKanjiUW") {
-//            (object, error) -> Void in
-//            if error == nil {
-//                print("MOOOOOOM")
-//                object!["fullName"] = self.captionFullName.text!
-//                object!["bio"] = self.captionBio.text!
-//                object!["profilePicture"] = file
-//                print("Update successful")
-//                //                        object.saveInBackground()
-//                object!.saveInBackground()
-//
-//            }
-//        }
-        
-//        query.getObjectInBackground(withId: "DhHKanjiUW") {  (object, error) -> Void in
-//          if error == nil {
-//            // Success!
-//            print(object)
-//          } else {
-//           // Fail!
-//          }
-//        }
-        
-        
-        
     }
-               
-        
-        
-//        prefQuery.getObjectInBackground(withId:currObjectId) {
-//            (objects, error)  in
-//            if error == nil {
-//                if let objects = objects {
-//                    for object in objects {
-//                        object["fullName"] = self.captionFullName.text!
-//                        object["bio"] = self.captionBio.text!
-//                        object["profilePicture"] = file
-//                        print("Update successful")
-//                        //                        object.saveInBackground()
-//                        object.saveInBackground { (success, error) in
-//                            if success {
-//                                self.dismiss(animated: true, completion: nil)
-//                                print("posted into Parse!")
-//
-//                            } else {
-//                                print("error saving post!")
-//                            }
-//                        }
-//
-//                    }
-//                }
-//            }
-//        }
     
 }
-  
-

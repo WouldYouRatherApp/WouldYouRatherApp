@@ -64,6 +64,9 @@ class ProfileFeedViewController: UIViewController, UITableViewDataSource, UITabl
         userImage.layer.masksToBounds = true
         userImage.layer.cornerRadius = userImage.bounds.width / 2
         
+        userImage.layer.borderColor = UIColor.black.cgColor
+        userImage.layer.borderWidth = 4
+        
         let currUserName = PFUser.current()?.username
         let currObjectId = (PFUser.current()?.objectId)!
         let currentUser = PFUser.current()! // currentUser is now assigned to the object containing the info about the current user
@@ -109,7 +112,7 @@ class ProfileFeedViewController: UIViewController, UITableViewDataSource, UITabl
 //
 //        let query = PFQuery(className: "Questions", predicate: predicate)
         let query = PFQuery(className: "Question")
-        query.whereKey("author", equalTo: currentAuthor)
+        query.whereKey("author", equalTo: currentUser)
         query.includeKeys(["author", "comments", "comments.author", "upvotes"])
         query.limit = 35
         query.findObjectsInBackground { (questions, error) in
@@ -207,6 +210,9 @@ class ProfileFeedViewController: UIViewController, UITableViewDataSource, UITabl
         let question = questions.reversed()[indexPath.row]
         
         let user = question["author"] as! PFUser
+        
+        cell.pfp.layer.masksToBounds = true
+        cell.pfp.layer.cornerRadius = cell.pfp.bounds.width / 2
 
         cell.usernameLabel.text = user["username"] as? String
         cell.fullNameLabel.text = user["fullName"] as? String

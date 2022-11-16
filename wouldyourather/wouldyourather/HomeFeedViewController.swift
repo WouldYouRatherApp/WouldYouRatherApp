@@ -15,7 +15,8 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     var questions = [PFObject]()
     var profiles = [PFObject]()
     var selectedQuestion: PFObject!
-    let cellSpacingHeight: CGFloat = 10
+//    ---------------------------Used for UI of each cell ----------------------
+//    let cellSpacingHeight: CGFloat = 10
     
     
     
@@ -225,25 +226,28 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.selectedQuestion = question
         cell.currentUser = currentUser
         
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
-        cell.clipsToBounds = true
-        cell.backgroundColor = UIColor.white
-        cell.layer.borderColor = UIColor.black.cgColor
-        
+//    ---------------------------Used for UI of each cell ----------------------
+//        cell.layer.borderWidth = 1
+//        cell.layer.cornerRadius = 8
+//        cell.clipsToBounds = true
+//        cell.backgroundColor = UIColor.white
+//        cell.layer.borderColor = UIColor.black.cgColor
+//
         
         
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return cellSpacingHeight
-        }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-           let headerView = UIView()
-           headerView.backgroundColor = UIColor.clear
-           return headerView
-       }
+//    ---------------------------Used for UI of each cell ----------------------
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//            return cellSpacingHeight
+//        }
+//
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//           let headerView = UIView()
+//           headerView.backgroundColor = UIColor.clear
+//           return headerView
+//       }
     
 
     // set distance between each table cell

@@ -135,6 +135,9 @@ class TrendingFeedViewController: UIViewController, UITableViewDelegate, UITable
 
             cell.usernameLabel.text = user["username"] as? String
             cell.fullNameLabel.text = user["fullName"] as? String
+            
+            cell.pfp.layer.masksToBounds = true
+            cell.pfp.layer.cornerRadius = cell.pfp.bounds.width / 2
 
             cell.option1Label.text = question["choiceA"] as? String
             cell.option2Label.text = question["choiceB"] as? String
