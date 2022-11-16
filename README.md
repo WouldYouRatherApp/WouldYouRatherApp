@@ -13,7 +13,7 @@ Users can create would you rather questions. Others can vote on the question and
 
 ### Current Progress
 
-<img src='https://imgur.com/0zO8hWy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/evqrvaK.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### App Evaluation
 - **Category:** Social Media App
@@ -42,6 +42,9 @@ Users can create would you rather questions. Others can vote on the question and
 
 **Optional Nice-to-have Stories**
 * [x] Trending feed is sorted by number of upvotes
+* [x] Profile page is implemented
+* [x] Users can change their bio and full name
+* [x] Users can log out and stay logged in
 * [ ] User can categorize "would you rathers" with a hashtag so any user can have "catered" questions
 * [ ] Users can see profiles that shows questions they voted on, their question stats (how many votes they got, how many questions, etc)
 
