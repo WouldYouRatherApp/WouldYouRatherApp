@@ -23,6 +23,8 @@
 		6AF35384290CE2C9009CA0C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35383290CE2C9009CA0C9 /* LoginViewController.swift */; };
 		6C011B57290B64CF00C4331F /* HomeFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C011B56290B64CF00C4331F /* HomeFeedViewController.swift */; };
 		6C011B59290B650900C4331F /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C011B58290B650900C4331F /* QuestionTableViewCell.swift */; };
+		6CA4A3A42924C6E600C7D1AC /* ProfileFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA4A3A32924C6E600C7D1AC /* ProfileFeedViewController.swift */; };
+		6CA4A3A62924C71E00C7D1AC /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA4A3A52924C71E00C7D1AC /* EditProfileViewController.swift */; };
 		6CDC2BAA2922017A007D3153 /* TrendingFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDC2BA92922017A007D3153 /* TrendingFeedViewController.swift */; };
 		6CE2E039291A3F93007F7C26 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE2E038291A3F93007F7C26 /* CommentsViewController.swift */; };
 		6CE2E03B291A4018007F7C26 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE2E03A291A4018007F7C26 /* CommentTableViewCell.swift */; };
@@ -72,6 +74,8 @@
 		6AF35383290CE2C9009CA0C9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6C011B56290B64CF00C4331F /* HomeFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedViewController.swift; sourceTree = "<group>"; };
 		6C011B58290B650900C4331F /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		6CA4A3A32924C6E600C7D1AC /* ProfileFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFeedViewController.swift; sourceTree = "<group>"; };
+		6CA4A3A52924C71E00C7D1AC /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		6CDC2BA92922017A007D3153 /* TrendingFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingFeedViewController.swift; sourceTree = "<group>"; };
 		6CE2E038291A3F93007F7C26 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		6CE2E03A291A4018007F7C26 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				6CE2E038291A3F93007F7C26 /* CommentsViewController.swift */,
 				6CE2E03A291A4018007F7C26 /* CommentTableViewCell.swift */,
 				6CDC2BA92922017A007D3153 /* TrendingFeedViewController.swift */,
+				6CA4A3A32924C6E600C7D1AC /* ProfileFeedViewController.swift */,
+				6CA4A3A52924C71E00C7D1AC /* EditProfileViewController.swift */,
 			);
 			path = wouldyourather;
 			sourceTree = "<group>";
@@ -439,9 +445,11 @@
 				6C011B59290B650900C4331F /* QuestionTableViewCell.swift in Sources */,
 				6A3B081B291F525C008A7B68 /* SignInViewController.swift in Sources */,
 				6CE2E03B291A4018007F7C26 /* CommentTableViewCell.swift in Sources */,
+				6CA4A3A62924C71E00C7D1AC /* EditProfileViewController.swift in Sources */,
 				6CE2E039291A3F93007F7C26 /* CommentsViewController.swift in Sources */,
 				6AF3535429046B25009CA0C9 /* AppDelegate.swift in Sources */,
 				6A3B081D291F52F1008A7B68 /* SignUpViewController.swift in Sources */,
+				6CA4A3A42924C6E600C7D1AC /* ProfileFeedViewController.swift in Sources */,
 				6AF3535629046B25009CA0C9 /* SceneDelegate.swift in Sources */,
 				6CDC2BAA2922017A007D3153 /* TrendingFeedViewController.swift in Sources */,
 				6C011B57290B64CF00C4331F /* HomeFeedViewController.swift in Sources */,

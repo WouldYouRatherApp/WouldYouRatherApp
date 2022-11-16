@@ -144,15 +144,19 @@ class TrendingFeedViewController: UIViewController, UITableViewDelegate, UITable
         let questionVotedUsers = (question["votedUsers"] as? [PFObject]) ?? []
         let userObjectId = currentUser.objectId
         
-        let imageFile1 = question["imageA"] as! PFFileObject
-        let imageFile2 = question["imageB"] as! PFFileObject
-        let urlString1 = imageFile1.url!
-        let urlString2 = imageFile2.url!
-        let url1 = URL(string: urlString1)!
-        let url2 = URL(string: urlString2)!
-
-        cell.photo1Image.af.setImage(withURL: url1)
-        cell.photo2Image.af.setImage(withURL: url2)
+        let imageA = question["imageA"] as? PFFileObject
+        if imageA != nil {
+            let urlString = imageA?.url
+            let urlA = URL(string: urlString ?? "")!
+            cell.photo1Image.af.setImage(withURL: urlA)
+        }
+        
+        let imageB = question["imageB"] as? PFFileObject
+        if imageB != nil {
+            let urlString = imageB?.url
+            let urlB = URL(string: urlString ?? "")!
+            cell.photo2Image.af.setImage(withURL: urlB)
+        }
             
     //        print(currentUser)
     //        print(user.objectId)
